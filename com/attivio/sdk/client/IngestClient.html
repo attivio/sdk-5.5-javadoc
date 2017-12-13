@@ -100,12 +100,12 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="http://java.sun.com/javase/7/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a>, <a href="http://java.sun.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>, <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client">DocumentOutputClient</a>, <a href="../../../../com/attivio/sdk/security/SecurityFeeder.html" title="interface in com.attivio.sdk.security">SecurityFeeder</a></dd>
+<dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang">AutoCloseable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a>, <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client">DocumentOutputClient</a>, <a href="../../../../com/attivio/sdk/security/SecurityFeeder.html" title="interface in com.attivio.sdk.security">SecurityFeeder</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">IngestClient</span>
-extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client">DocumentOutputClient</a>, <a href="http://java.sun.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
+extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client">DocumentOutputClient</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
 <div class="block">Sends content (documents, deletes, index messages) to an Attivio instance.
  Typical configurations of AIE do not use "Ordered Messaging" and will process documents and messages
  in no guaranteed order.
@@ -192,7 +192,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
  <h2>Thread Safety</h2> <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> is NOT thread safe and thus, each thread must have its own instance.
  <p>
  If trying to coordinate a <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> across multiple <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a>s, have each <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> thread call <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> to ensure all previously
- sent documents are in the index, and then use something like a <a href="http://java.sun.com/javase/7/docs/api/java/util/concurrent/CountDownLatch.html?is-external=true" title="class or interface in java.util.concurrent"><code>CountDownLatch</code></a> to
+ sent documents are in the index, and then use something like a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html?is-external=true" title="class or interface in java.util.concurrent"><code>CountDownLatch</code></a> to
  let the committing thread's <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> know it can call <code>#commit()</code>. After
  the committing thread then returns from <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a>, all previously fed
  documents on all threads are known to be in the index and committed for search retrieval.
@@ -237,14 +237,14 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#addStaticField-java.lang.String-java.lang.Object-">addStaticField</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-              <a href="http://java.sun.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#addStaticField-java.lang.String-java.lang.Object-">addStaticField</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>
 <div class="block">Add a field to apply to all documents.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-">commit</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;zones)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-">commit</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;zones)</code>
 <div class="block">Sends internal queue of documents and commits all documents sent to AIE.</div>
 </td>
 </tr>
@@ -268,7 +268,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="http://java.sun.com/javase/7/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#getClientId--">getClientId</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
@@ -302,7 +302,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#getDocumentsSent--">getDocumentsSent</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#getIngestWorkflowName--">getIngestWorkflowName</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -316,11 +316,11 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#getOptimizeInterval--">getOptimizeInterval</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#getSizeToDomain--">getSizeToDomain</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#getStaticFields--">getStaticFields</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
@@ -341,28 +341,28 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-byte:A-">put</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-byte:A-">put</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
    byte[]&nbsp;bytes)</code>
 <div class="block">Put the contents of a byte array into the content store.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-java.io.File-">put</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-   <a href="http://java.sun.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;f)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-java.io.File-">put</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+   <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;f)</code>
 <div class="block">Put the contents of a File into the content store.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-java.io.InputStream-">put</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-   <a href="http://java.sun.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-java.io.InputStream-">put</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+   <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input)</code>
 <div class="block">Put a resource into the Content Store.</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-com.attivio.sdk.client.InputStreamBuilder-">put</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#put-java.lang.String-com.attivio.sdk.client.InputStreamBuilder-">put</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
    <a href="../../../../com/attivio/sdk/client/InputStreamBuilder.html" title="interface in com.attivio.sdk.client">InputStreamBuilder</a>&nbsp;input)</code>
 <div class="block">Stores binary data in the ContentStore.</div>
 </td>
@@ -405,7 +405,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 </tr>
 <tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#setIngestWorkflowName-java.lang.String-">setIngestWorkflowName</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wf)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#setIngestWorkflowName-java.lang.String-">setIngestWorkflowName</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wf)</code>
 <div class="block">Set ingest workflow name</div>
 </td>
 </tr>
@@ -429,13 +429,13 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#setSizeToDomain-java.util.Map-">setSizeToDomain</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;sizeToDomain)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#setSizeToDomain-java.util.Map-">setSizeToDomain</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;sizeToDomain)</code>
 <div class="block">Sets the size to message domain map for this client.</div>
 </td>
 </tr>
 <tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#setStaticFields-java.util.Map-">setStaticFields</a></span>(<a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;fields)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#setStaticFields-java.util.Map-">setStaticFields</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;fields)</code>
 <div class="block">Set a map of fields to apply to all documents.</div>
 </td>
 </tr>
@@ -463,8 +463,8 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <li class="blockList"><a name="methods.inherited.from.class.java.io.Closeable">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;java.io.<a href="http://java.sun.com/javase/7/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></h3>
-<code><a href="http://java.sun.com/javase/7/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io">close</a></code></li>
+<h3>Methods inherited from interface&nbsp;java.io.<a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></h3>
+<code><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io">close</a></code></li>
 </ul>
 </li>
 </ul>
@@ -486,7 +486,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>getClientId</h4>
-<pre><a href="http://java.sun.com/javase/7/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;getClientId()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;getClientId()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the client ID used for this feeder</dd>
@@ -631,8 +631,8 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>put</h4>
-<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                   <a href="http://java.sun.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input)
+<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                   <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input)
             throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Put a resource into the Content Store.
 
@@ -658,7 +658,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>put</h4>
-<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                    <a href="../../../../com/attivio/sdk/client/InputStreamBuilder.html" title="interface in com.attivio.sdk.client">InputStreamBuilder</a>&nbsp;input)
             throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Stores binary data in the ContentStore.</div>
@@ -681,8 +681,8 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>put</h4>
-<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                   <a href="http://java.sun.com/javase/7/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;f)
+<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                   <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;f)
             throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Put the contents of a File into the content store.</div>
 <dl>
@@ -704,7 +704,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>put</h4>
-<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<pre><a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest">ContentPointer</a>&nbsp;put(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                    byte[]&nbsp;bytes)
             throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Put the contents of a byte array into the content store.</div>
@@ -969,7 +969,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>setIngestWorkflowName</h4>
-<pre>void&nbsp;setIngestWorkflowName(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wf)</pre>
+<pre>void&nbsp;setIngestWorkflowName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;wf)</pre>
 <div class="block">Set ingest workflow name</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -983,7 +983,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>getIngestWorkflowName</h4>
-<pre><a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getIngestWorkflowName()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getIngestWorkflowName()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>ingest workflow name</dd>
@@ -996,7 +996,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>getSizeToDomain</h4>
-<pre><a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getSizeToDomain()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getSizeToDomain()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>return the size to message domain map for this client</dd>
@@ -1009,7 +1009,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>setSizeToDomain</h4>
-<pre>void&nbsp;setSizeToDomain(<a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;sizeToDomain)</pre>
+<pre>void&nbsp;setSizeToDomain(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;sizeToDomain)</pre>
 <div class="block">Sets the size to message domain map for this client. Message domains allow AIE to devote differing amounts of processing resources to messages from different
  sources. This facility is generally used to restrict the resources devoted to sources of large documents so that other sources can continue to make
  progress. Message domains are take effect only when the AIE cluster is configured with matching message domain names.
@@ -1028,7 +1028,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>commit</h4>
-<pre>void&nbsp;commit(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;zones)
+<pre>void&nbsp;commit(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>...&nbsp;zones)
      throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Sends internal queue of documents and commits all documents sent to AIE.
 
@@ -1093,7 +1093,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>getStaticFields</h4>
-<pre><a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;getStaticFields()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;getStaticFields()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a map of all fields that will be set on every document sent from this feeder.</dd>
@@ -1106,7 +1106,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>setStaticFields</h4>
-<pre>void&nbsp;setStaticFields(<a href="http://java.sun.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://java.sun.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;fields)</pre>
+<pre>void&nbsp;setStaticFields(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;fields)</pre>
 <div class="block">Set a map of fields to apply to all documents.
  If already connected, this setting won't take affect until after
  a disconnect and reconnect.</div>
@@ -1122,8 +1122,8 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>addStaticField</h4>
-<pre>void&nbsp;addStaticField(<a href="http://java.sun.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
-                    <a href="http://java.sun.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+<pre>void&nbsp;addStaticField(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
 <div class="block">Add a field to apply to all documents.
  If already connected, this setting won't take affect until after
  a disconnect and reconnect.</div>
