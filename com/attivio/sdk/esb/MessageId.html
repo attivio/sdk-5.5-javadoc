@@ -119,18 +119,20 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">MessageId</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;<a href="../../../../com/attivio/sdk/esb/MessageId.html" title="class in com.attivio.sdk.esb">MessageId</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
-<div class="block">Container for a multi-part message id. All messages which are an <code>OrderSensitiveMessage</code> have a MessageId which
- is used to preserve the order of the message. MessageIds can have multiple parts which allows for the addition of child messages
- while maintaining the original order. A multi-part message id can be viewed as an array of integers where the size of the array is
+<div class="block"><p>
+ Container for a multi-part message id. MessageIds can have multiple parts which allows for the addition of child messages while
+ maintaining the original order. A multi-part message id can be viewed as an array of integers where the size of the array is
  the number of parts. All messages which have a part <i>n</i> are considered children of a message with a part <i>n-1</i>.
  Initially all messages start with a single part. For example:
  
- <p>Initial messages:<br/>
+ <p>
+ Initial messages:<br/>
  1<br/>
  2<br/>
  3<br/>
  </p>
- <p>Then, message 1 adds some children, message 2 adds children which add children (shown sorted):<br/>
+ <p>
+ Then, message 1 adds some children, message 2 adds children which add children (shown sorted):<br/>
  1<br/>
  1.1<br/>
  1.2<br/>

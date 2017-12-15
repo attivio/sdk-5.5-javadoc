@@ -106,41 +106,33 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">IngestClient</span>
 extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client">DocumentOutputClient</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io">Closeable</a></pre>
-<div class="block">Sends content (documents, deletes, index messages) to an Attivio instance.
- Typical configurations of AIE do not use "Ordered Messaging" and will process documents and messages
- in no guaranteed order.
+<div class="block">Sends content (documents, deletes, index messages) to an Attivio instance. Typical configurations of AIE do not use "Ordered
+ Messaging" and will process documents and messages in no guaranteed order.
 
- <h2>Message Delivery and Waiting For Completion</h2>
- The default implementation of <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> uses a Message Result Handler
- that tracks when documents and messages make it to the index. Calling <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> will ensure that this method blocks until
- all previously sent messages have been acknowledged as getting to the index.
- With "Ordered Commits" (see below) enabled, a call to <code>#commit()</code> automatically calls <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> internally
- before sending the <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> message to ensure all previous documents
- are in the index before the commit gets to the index. A call to <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> after
- the <code>#commit()</code> will then, similarly, block until that <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> message
- has made it into the index, thus ensuring the commit occurred and those documents
- will return from future searches. 
+ <h2>Message Delivery and Waiting For Completion</h2> The default implementation of <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> uses a Message Result
+ Handler that tracks when documents and messages make it to the index. Calling <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> will ensure that
+ this method blocks until all previously sent messages have been acknowledged as getting to the index. With "Ordered Commits"
+ (see below) enabled, a call to <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a> automatically calls <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> internally before
+ sending the <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> message to ensure all previous documents are in the index before the commit gets to the index. A
+ call to <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> after the <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a> will then, similarly, block until that <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a>
+ message has made it into the index, thus ensuring the commit occurred and those documents will return from future searches.
 
- <h2>Ordered Commits</h2>
- When enabled (typically the default), ordered commits ensures previously fed
- documents, deletes and messages all make it to the AIE index before a <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> or <a href="../../../../com/attivio/sdk/ingest/Optimize.html" title="class in com.attivio.sdk.ingest"><code>Optimize</code></a> is sent. This means calls to <code>#commit()</code>, <a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a> or
- <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a> may take a while to finish while
- waiting for messages to be processed and make it to the index. To guarantee document
- visibility on queries immediately after a call to <code>#commit()</code> or <a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a>, users
- must call <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> to wait for the commit/refresh
+ <h2>Ordered Commits</h2> When enabled (typically the default), ordered commits ensures previously fed documents, deletes and
+ messages all make it to the AIE index before a <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> or <a href="../../../../com/attivio/sdk/ingest/Optimize.html" title="class in com.attivio.sdk.ingest"><code>Optimize</code></a> is sent. This means calls to
+ <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a>, <a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a> or <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a> may take a while to finish while waiting for messages to
+ be processed and make it to the index. To guarantee document visibility on queries immediately after a call to
+ <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a> or <a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a>, users must call <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> to wait for the commit/refresh
  acknowledgment from the engine.
  <p>
- If message and commit scope is not critical, then either disable "Ordered
- Commits" or have a different <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> feeding data than the one managing <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> and other index messages.
- </p>
+ If message and commit scope is not critical, then either disable "Ordered Commits" or have a different <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a>
+ feeding data than the one managing <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> and other index messages.
 
- <h2>Message Groups</h2>
- Any messages implementing the <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client"><code>DocumentOutputClient</code></a> interface can be essentially
- "grouped together" by sending them within the same message group. AIE internals
- guarantee that no <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> messages will get into the
- index in the middle of a message group. This is vital for bundling operations that
- should appear in the index in the same commit scope. Calls to <code>#commit()</code> or <a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a> will throw an exception if called within a message group.
- A typical code example follows:
+ <h2>Message Groups</h2> Any messages implementing the <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" title="interface in com.attivio.sdk.client"><code>DocumentOutputClient</code></a> interface can be essentially "grouped
+ together" by sending them within the same message group. AIE internals guarantee that no <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> messages will get into
+ the index in the middle of a message group. This is vital for bundling operations that should appear in the index in the same
+ commit scope. Calls to <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a> or <a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a> will throw an exception if called within a message
+ group. A typical code example follows:
+ 
  <pre class="code-java">
  feeder.startMessageGroup();
  feeder.feed(doc1);
@@ -149,54 +141,27 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
  feeder.endMessageGroup();
  </pre>
 
- <h2>Document Batching</h2>
- Document processing occurs in document batches of 1 or more documents that are passed through AIE as single messages.
- Document batch sizes are controlled via <a href="../../../../com/attivio/sdk/client/IngestClient.html#setDocumentBatchSize-int-"><code>setDocumentBatchSize(int)</code></a> and <a href="../../../../com/attivio/sdk/client/IngestClient.html#setMaxBatchSizeMB-int-"><code>setMaxBatchSizeMB(int)</code></a>.
- Document batches will be flushed whenever one of these limits is exceeded. Default configuration for these settings
- ensure that large documents will result in smaller batches in order to reduce memory overhead and small documents 
- will result in larger batches to increase throughput. Certain operations, like <code>#commit()</code> and <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a>, may cause
- the batch to be sent before reaching the exact size.
+ <h2>Document Batching</h2> Document processing occurs in document batches of 1 or more documents that are passed through AIE as
+ single messages. Document batch sizes are controlled via <a href="../../../../com/attivio/sdk/client/IngestClient.html#setDocumentBatchSize-int-"><code>setDocumentBatchSize(int)</code></a> and
+ <a href="../../../../com/attivio/sdk/client/IngestClient.html#setMaxBatchSizeMB-int-"><code>setMaxBatchSizeMB(int)</code></a>. Document batches will be flushed whenever one of these limits is exceeded. Default
+ configuration for these settings ensure that large documents will result in smaller batches in order to reduce memory overhead
+ and small documents will result in larger batches to increase throughput. Certain operations, like <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a>
+ and <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a>, may cause the batch to be sent before reaching the exact size.
  <p>
  Please contact Attivio before changing the default batching settings.
  </p>
 
- <h2>Auto Commit and Auto Optimize</h2>
- To automatically send <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> or <a href="../../../../com/attivio/sdk/ingest/Optimize.html" title="class in com.attivio.sdk.ingest"><code>Optimize</code></a> messages based on a certain document
- frequency, call <a href="../../../../com/attivio/sdk/client/IngestClient.html#setCommitInterval-int-"><code>setCommitInterval(int)</code></a> and <a href="../../../../com/attivio/sdk/client/IngestClient.html#setOptimizeInterval-int-"><code>setOptimizeInterval(int)</code></a>, respectively.
- If triggered inside a Message Group, the <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a>/<a href="../../../../com/attivio/sdk/ingest/Optimize.html" title="class in com.attivio.sdk.ingest"><code>Optimize</code></a> will not be sent until
- the end of the Message Group.
-
- <h2>Ordered Messaging</h2>
- If ordered messaging is enabled for AIE (not typical), and a <code>Collapse</code> collapser is used in a workflow, then the user is responsible for creating
- document linking appropriately and not calling <code>#commit()</code>/<a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a> in the middle of a set of linked messages. 
-
- <h2>HTTP User Credentials</h2>
- If HTTP credentials are required for connections to AIE, call <code>#setConnectionCredentials(String, String)</code>.
-
- <h2>Auto Connect</h2>
- If the <code>#connect()</code> method is not called explicitly it will be called automatically on
- the first method call that requires connection to the back end AIE receivers. These methods include:
- <ul>
- <li><code>#commit()</code></li>
- <li><a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a></li>
- <li><a href="../../../../com/attivio/sdk/client/IngestClient.html#refresh--"><code>refresh()</code></a></li>
- <li><a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#delete-java.util.Collection-"><code>DocumentOutputClient.delete(Collection)</code></a></li>
- <li><a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#delete-java.lang.String...-"><code>DocumentOutputClient.delete(String...)</code></a></li>
- <li><code>#deleteByQuery(WorkflowQueue, Query)</code></li>
- <li><code>#deleteByQuery(WorkflowQueue, String, String)</code></li>
- <li><a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#feed-com.attivio.sdk.ingest.IngestDocument...-"><code>DocumentOutputClient.feed(IngestDocument...)</code></a></li>
- <li><code>#feed(Collection)</code></li>
- <li><a href="../../../../com/attivio/sdk/client/IngestClient.html#sendQueuedDocuments--"><code>sendQueuedDocuments()</code></a></li>
- </ul>
+ <h2>Auto Commit and Auto Optimize</h2> To automatically send <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> or <a href="../../../../com/attivio/sdk/ingest/Optimize.html" title="class in com.attivio.sdk.ingest"><code>Optimize</code></a> messages based on a certain
+ document frequency, call <a href="../../../../com/attivio/sdk/client/IngestClient.html#setCommitInterval-int-"><code>setCommitInterval(int)</code></a> and <a href="../../../../com/attivio/sdk/client/IngestClient.html#setOptimizeInterval-int-"><code>setOptimizeInterval(int)</code></a>, respectively. If triggered
+ inside a Message Group, the <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a>/<a href="../../../../com/attivio/sdk/ingest/Optimize.html" title="class in com.attivio.sdk.ingest"><code>Optimize</code></a> will not be sent until the end of the Message Group.
 
  <h2>Thread Safety</h2> <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> is NOT thread safe and thus, each thread must have its own instance.
  <p>
- If trying to coordinate a <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> across multiple <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a>s, have each <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> thread call <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> to ensure all previously
- sent documents are in the index, and then use something like a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html?is-external=true" title="class or interface in java.util.concurrent"><code>CountDownLatch</code></a> to
- let the committing thread's <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> know it can call <code>#commit()</code>. After
- the committing thread then returns from <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a>, all previously fed
- documents on all threads are known to be in the index and committed for search retrieval.
- </p>
+ If trying to coordinate a <a href="../../../../com/attivio/sdk/ingest/Commit.html" title="class in com.attivio.sdk.ingest"><code>Commit</code></a> across multiple <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a>s, have each <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> thread call
+ <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> to ensure all previously sent documents are in the index, and then use something like a
+ <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html?is-external=true" title="class or interface in java.util.concurrent"><code>CountDownLatch</code></a> to let the committing thread's <a href="../../../../com/attivio/sdk/client/IngestClient.html" title="interface in com.attivio.sdk.client"><code>IngestClient</code></a> know it can call <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a>. After
+ the committing thread then returns from <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a>, all previously fed documents on all threads are known to
+ be in the index and committed for search retrieval.
 
  <h4>Example of typical IngestClient:</h4>
 
@@ -210,7 +175,6 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
    IngestDocument doc2 = new IngestDocument("doc2");
    IngestDocument doc3 = new IngestDocument("doc3");
    ... // Populate doc1, doc2, and doc3
-   feeder.connect(); // see below for information about auto-connect
    feeder.feed(doc1);
    feeder.feed(doc2, doc3); // feed a batch of 2 documents
    feeder.commit();
@@ -442,7 +406,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <tr id="i36" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--">waitForCompletion</a></span>()</code>
-<div class="block">Wait <code>#getWaitForCompletionTimeout()</code> milliseconds for all MessageResults to be processed.</div>
+<div class="block">Wait for all MessageResults to be processed.</div>
 </td>
 </tr>
 <tr id="i37" class="rowColor">
@@ -688,7 +652,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>id</code> - the ID of the resource to put into the Content Store.</dd>
-<dd><code>input</code> - file with data.</dd>
+<dd><code>f</code> - file with data.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a ContentPointer for the resource.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -711,7 +675,7 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>id</code> - the ID of the resource to put into the Content Store.</dd>
-<dd><code>input</code> - file with data.</dd>
+<dd><code>bytes</code> - data to put.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a ContentPointer for the resource.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -729,10 +693,9 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <h4>waitForCompletion</h4>
 <pre>boolean&nbsp;waitForCompletion()
                    throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Wait <code>#getWaitForCompletionTimeout()</code> milliseconds for all MessageResults to be processed.
- If the time is exceeded and not all documents have gotten message results, then errors will be
- logged for the missing document results.  And those documents will be cleared from the 
- message result state so that further processing can happen.</div>
+<div class="block">Wait for all MessageResults to be processed. If the time is exceeded and not all documents have gotten message results, then
+ errors will be logged for the missing document results. And those documents will be cleared from the message result state so
+ that further processing can happen.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if all outstanding message results were received before the timeout (or message results are disabled).</dd>
@@ -784,10 +747,13 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <li class="blockList">
 <h4>setOrderedCommits</h4>
 <pre>void&nbsp;setOrderedCommits(boolean&nbsp;orderedCommits)</pre>
-<div class="block">Enable or disable "Ordered Commits".  Ordered commits ensure that all content fed to AIE is completed before a commit call is executed.
- This has the effect of making the <code>IngestClient#commit()</code> a blocking call while a call to <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> is called.
-  
- <p> Please refer to the documentation on ordered commits the <a href="http://developer.attivio.com/">developer network</a> for more information.</div>
+<div class="block">Enable or disable "Ordered Commits". Ordered commits ensure that all content fed to AIE is completed before a commit call is
+ executed. This has the effect of making the <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a> a blocking call while a call to
+ <a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--"><code>waitForCompletion()</code></a> is called.
+ 
+ <p>
+ Please refer to the documentation on ordered commits the <a href="http://developer.attivio.com/">developer network</a> for
+ more information.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>orderedCommits</code> - set to true to enable this or false to disable it</dd>
@@ -816,9 +782,11 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <pre>void&nbsp;setDocumentBatchSize(int&nbsp;batchSize)</pre>
 <div class="block">Sets the maximum number of documents that will ever be sent as a part of a single <a href="../../../../com/attivio/sdk/ingest/DocumentList.html" title="class in com.attivio.sdk.ingest"><code>DocumentList</code></a>.
 
- <p>This batch size (specified in number of documents) does not guarantee that all DocumentLists will be exactly
- this size as calls to <code>#commit()</code>, <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a>
- or <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#startMessageGroup--"><code>DocumentOutputClient.startMessageGroup()</code></a> can cause smaller batches to be sent.</p></div>
+ <p>
+ This batch size (specified in number of documents) does not guarantee that all DocumentLists will be exactly this size as
+ calls to <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a>, <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a> or <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#startMessageGroup--"><code>DocumentOutputClient.startMessageGroup()</code></a> can cause smaller batches to be
+ sent.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>batchSize</code> - in number of documents</dd>
@@ -860,12 +828,15 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <pre>void&nbsp;setMaxBatchSizeMB(int&nbsp;value)</pre>
 <div class="block">Sets the maximum size of documents (in megabytes) that will ever be sent as part of a single <a href="../../../../com/attivio/sdk/ingest/DocumentList.html" title="class in com.attivio.sdk.ingest"><code>DocumentList</code></a>.
 
- <p>Document size will be estimated based on field values and the size of any <a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest"><code>ContentPointer</code></a>s included in the document.</p>
+ <p>
+ Document size will be estimated based on field values and the size of any <a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest"><code>ContentPointer</code></a>s included in the document.
+ </p>
 
- <p>This batch size (specified in megabytes) does not guarantee that all DocumentLists will be exactly
- this size as calls to <code>#commit()</code>, <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a>
- or <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#startMessageGroup--"><code>DocumentOutputClient.startMessageGroup()</code></a> can cause smaller batches to be sent. The specified <a href="../../../../com/attivio/sdk/client/IngestClient.html#getDocumentBatchSize--"><code>getDocumentBatchSize()</code></a> will also
- be used to limit the size of DocumentLists.</p></div>
+ <p>
+ This batch size (specified in megabytes) does not guarantee that all DocumentLists will be exactly this size as calls to
+ <a href="../../../../com/attivio/sdk/client/IngestClient.html#commit-java.lang.String...-"><code>commit(String...)</code></a>, <a href="../../../../com/attivio/sdk/client/IngestClient.html#optimize--"><code>optimize()</code></a> or <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#startMessageGroup--"><code>DocumentOutputClient.startMessageGroup()</code></a> can cause smaller batches to be sent. The
+ specified <a href="../../../../com/attivio/sdk/client/IngestClient.html#getDocumentBatchSize--"><code>getDocumentBatchSize()</code></a> will also be used to limit the size of DocumentLists.
+ </p></div>
 </li>
 </ul>
 <a name="getContentStoreThresholdKB--">
@@ -1107,12 +1078,12 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <li class="blockList">
 <h4>setStaticFields</h4>
 <pre>void&nbsp;setStaticFields(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;fields)</pre>
-<div class="block">Set a map of fields to apply to all documents.
- If already connected, this setting won't take affect until after
- a disconnect and reconnect.</div>
+<div class="block">Set a map of fields to apply to all documents.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>fields</code> - the fields and values to set</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if any documents have already been fed.</dd>
 </dl>
 </li>
 </ul>
@@ -1124,13 +1095,13 @@ extends <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html" t
 <h4>addStaticField</h4>
 <pre>void&nbsp;addStaticField(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
-<div class="block">Add a field to apply to all documents.
- If already connected, this setting won't take affect until after
- a disconnect and reconnect.</div>
+<div class="block">Add a field to apply to all documents.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - the name of the field</dd>
 <dd><code>value</code> - the value of the field</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang">IllegalStateException</a></code> - if any documents have already been fed.</dd>
 </dl>
 </li>
 </ul>

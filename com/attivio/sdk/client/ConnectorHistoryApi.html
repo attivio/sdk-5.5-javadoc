@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":17,"i9":6,"i10":6,"i11":6,"i12":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":17,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -105,12 +105,13 @@ var activeTableTab = "activeTableTab";
  trigger any connector activity, these methods are meant only to record what has occurred thru other means. Implementations do
  not validate state transitions; this API assumes the caller knows best.
  <p>
- When <code>#connectorQueued(String)</code> is called a new history record for the connector is created. Subsequent calls that affect
- the currently executing connector will update this history record. Attempts to update a history record in the
- <a href="../../../../com/attivio/sdk/esb/ConnectorExecutionStatus.html#NOT_RUNNING">NOT_RUNNING</a> state will fail with an <code>IllegalStateException</code>.
+ When <a href="../../../../com/attivio/sdk/client/ConnectorHistoryApi.html#connectorQueued-java.lang.String-java.util.UUID-java.lang.String-java.util.List-boolean-"><code>connectorQueued(String, UUID, String, List, boolean)</code></a> is called a new history record for the connector is created.
+ Subsequent calls that affect the currently executing connector will update this history record. Attempts to update a history
+ record in the <a href="../../../../com/attivio/sdk/esb/ConnectorExecutionStatus.html#NOT_RUNNING">NOT_RUNNING</a> state will fail with an
+ <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang"><code>IllegalStateException</code></a>.
  
  <h4>Durability</h4> The implementation may choose to delay recording of any history or status information until the call of
- <code>#connectorCompleted(String)</code>. This allows for implementations which cache updates to the current execution without
+ <a href="../../../../com/attivio/sdk/client/ConnectorHistoryApi.html#connectorCompleted-java.lang.String-long-"><code>connectorCompleted(String, long)</code></a>. This allows for implementations which cache updates to the current execution without
  requiring immediate writes which are undesirable.
  
  <h4>Other Status Information</h4> Other status information such as the number of outstanding documents and number of OKs and
@@ -236,6 +237,13 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/ConnectorHistoryApi.html#updateExtraRunInfo-java.lang.String-java.util.List-">updateExtraRunInfo</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectorName,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;extraRunInfo)</code>
+<div class="block">Updates the extraRunInfo for <code>connectorName</code>.</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/ConnectorHistoryApi.html#updateSentCount-java.lang.String-long-">updateSentCount</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectorName,
                long&nbsp;docCount)</code>
 <div class="block">Updates the number of documents sent by <code>connectorName</code>.</div>
@@ -277,6 +285,8 @@ var activeTableTab = "activeTableTab";
 <h4>CONNECTOR_ABANDONMENT_DELAY</h4>
 <pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> CONNECTOR_ABANDONMENT_DELAY</pre>
 <dl>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>5.5.0.1</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#com.attivio.sdk.client.ConnectorHistoryApi.CONNECTOR_ABANDONMENT_DELAY">Constant Field Values</a></dd>
 </dl>
@@ -446,6 +456,29 @@ var activeTableTab = "activeTableTab";
 <dd><code>docCount</code> - </dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</a></code> - if connector is not currently running.</dd>
+</dl>
+</li>
+</ul>
+<a name="updateExtraRunInfo-java.lang.String-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateExtraRunInfo</h4>
+<pre>void&nbsp;updateExtraRunInfo(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectorName,
+                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;extraRunInfo)
+                 throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
+<div class="block">Updates the extraRunInfo for <code>connectorName</code>. The existing run information is replaced with <code>extraRunInfo</code>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>connectorName</code> - </dd>
+<dd><code>extraRunInfo</code> - </dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang">RuntimeException</a></code> - if connector is not currently running.</dd>
+<dd><code><a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>5.5.0.2</dd>
 </dl>
 </li>
 </ul>

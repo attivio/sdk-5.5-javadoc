@@ -110,7 +110,7 @@
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">RelevancyModelApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/RelevancyModelApi.html#addFeature-com.attivio.sdk.search.relevancy.RelevancyFeatureDef-">addFeature</a></span>(<a href="../../../../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy">RelevancyFeatureDef</a>&nbsp;feature)</code>
-<div class="block">Add a <code>RelevanyFeatureDef</code>.</div>
+<div class="block">Add a <a href="../../../../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy"><code>RelevancyFeatureDef</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -529,14 +529,14 @@
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#getAuditDetails-java.lang.String-java.util.Date-java.util.Date-">getAuditDetails</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;start,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;end)</code>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit">AuditDetail</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#getAuditDetails-java.lang.String-java.util.UUID-">getAuditDetails</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -640,26 +640,21 @@
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#waitForCompletion-java.util.UUID-">waitForCompletion</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#waitForCompletion-java.util.UUID-long-">waitForCompletion</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
                  long&nbsp;timeout)</code>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#whenSearchable-java.lang.String-java.util.UUID-">whenSearchable</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Returns the earliest date an index commit was received after all documents
- for the client were indexed.</div>
+<div class="block">Returns the earliest date an index commit was received after all documents for the client were indexed.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -667,8 +662,7 @@
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#whenSearchable-java.lang.String-java.util.UUID-java.lang.String-">whenSearchable</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId)</code>
-<div class="block">Returns the earliest date an index commit was received after the document was
- indexed.</div>
+<div class="block">Returns the earliest date an index commit was received after the document was indexed.</div>
 </td>
 </tr>
 </tbody>

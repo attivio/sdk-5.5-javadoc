@@ -269,12 +269,15 @@ extends <a href="../../../../com/attivio/sdk/security/SecurityFeeder.html" title
                    <a href="../../../../com/attivio/sdk/search/query/Query.html" title="class in com.attivio.sdk.search.query">Query</a>&nbsp;query)
             throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Delete all documents that match the <a href="../../../../com/attivio/sdk/search/query/Query.html" title="class in com.attivio.sdk.search.query"><code>Query</code></a>.
- <p>If documents are currently batched up, then those documents will be sent along with this delete. </p>
- <p>Use <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#bulkUpdate-com.attivio.sdk.ingest.BulkUpdate-"><code>bulkUpdate(BulkUpdate)</code></a> to feed more complicated delete queries.</p>
- If these deletes are meant to apply to uncommitted documents previously fed
- with this ContentFeeder, then those documents must be committed
- to the index before this delete is called. When ordered commits
- is enabled, this entails calling:
+ <p>
+ If documents are currently batched up, then those documents will be sent along with this delete.
+ </p>
+ <p>
+ Use <a href="../../../../com/attivio/sdk/client/DocumentOutputClient.html#bulkUpdate-com.attivio.sdk.ingest.BulkUpdate-"><code>bulkUpdate(BulkUpdate)</code></a> to feed more complicated delete queries.
+ </p>
+ If these deletes are meant to apply to uncommitted documents previously fed with this ContentFeeder, then those documents
+ must be committed to the index before this delete is called. When ordered commits is enabled, this entails calling:
+ 
  <pre class="code-java">
  contentFeeder.commit();
  contentFeeder.waitForCompletion();
@@ -282,6 +285,7 @@ extends <a href="../../../../com/attivio/sdk/security/SecurityFeeder.html" title
  </pre>
 
  When ordered commits is disabled, it entails calling:
+ 
  <pre class="code-java">
  contentFeeder.waitForCompletion();
  contentFeeder.commit();
@@ -290,7 +294,7 @@ extends <a href="../../../../com/attivio/sdk/security/SecurityFeeder.html" title
  </pre></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>queryWorkflows</code> - the query workflow or null if none needed</dd>
+<dd><code>queryWorkflow</code> - the query workflow or null if none needed</dd>
 <dd><code>query</code> - query to delete by</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>

@@ -122,7 +122,8 @@
 <tr class="altColor">
 <td class="colFirst"><a href="#com.attivio.sdk.server.component">com.attivio.sdk.server.component</a></td>
 <td class="colLast">
-<div class="block">Interfaces necessary to write components for the AIE system.</div>
+<div class="block">
+ Interfaces necessary to write components for the AIE system.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -622,7 +623,8 @@
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">IngestionHistoryApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestionHistoryApi.html#getUnvisited-java.lang.String-java.util.Date-">getUnvisited</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;since)</code>
-<div class="block">Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited since the time <code>since</code>.</div>
+<div class="block">
+ Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited since the time <code>since</code>.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -882,12 +884,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="typeNameLabel">ConnectorHistoryApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/ConnectorHistoryApi.html#updateExtraRunInfo-java.lang.String-java.util.List-">updateExtraRunInfo</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectorName,
+                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;extraRunInfo)</code>
+<div class="block">Updates the extraRunInfo for <code>connectorName</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">ConnectorHistoryApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/ConnectorHistoryApi.html#updateSentCount-java.lang.String-long-">updateSentCount</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;connectorName,
                long&nbsp;docCount)</code>
 <div class="block">Updates the number of documents sent by <code>connectorName</code>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="typeNameLabel">IngestionHistoryApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestionHistoryApi.html#visit-java.lang.String-java.lang.String-byte:A-">visit</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
@@ -895,13 +904,13 @@
 <div class="block">Records the <code>key</code> as having been visited updates its associated signature.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">IngestClient.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion--">waitForCompletion</a></span>()</code>
-<div class="block">Wait <code>#getWaitForCompletionTimeout()</code> milliseconds for all MessageResults to be processed.</div>
+<div class="block">Wait for all MessageResults to be processed.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="typeNameLabel">IngestClient.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestClient.html#waitForCompletion-long-">waitForCompletion</a></span>(long&nbsp;timeout)</code>
 <div class="block">Wait the specified number of milliseconds for all MessageResults to be processed.</div>
@@ -963,14 +972,14 @@
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#getAuditDetails-java.lang.String-java.util.Date-java.util.Date-">getAuditDetails</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;start,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;end)</code>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit">AuditDetail</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#getAuditDetails-java.lang.String-java.util.UUID-">getAuditDetails</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1086,26 +1095,21 @@
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#waitForCompletion-java.util.UUID-">waitForCompletion</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#waitForCompletion-java.util.UUID-long-">waitForCompletion</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
                  long&nbsp;timeout)</code>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#whenSearchable-java.lang.String-java.util.UUID-">whenSearchable</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Returns the earliest date an index commit was received after all documents
- for the client were indexed.</div>
+<div class="block">Returns the earliest date an index commit was received after all documents for the client were indexed.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1113,8 +1117,7 @@
 <td class="colLast"><span class="typeNameLabel">AuditReaderApi.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#whenSearchable-java.lang.String-java.util.UUID-java.lang.String-">whenSearchable</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId)</code>
-<div class="block">Returns the earliest date an index commit was received after the document was
- indexed.</div>
+<div class="block">Returns the earliest date an index commit was received after the document was indexed.</div>
 </td>
 </tr>
 </tbody>
@@ -1411,7 +1414,8 @@
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest">IngestFieldValue</a></code></td>
 <td class="colLast"><span class="typeNameLabel">FieldValueCreatingTransformer.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/server/component/ingest/FieldValueCreatingTransformer.html#createMappedValue-java.lang.String-com.attivio.sdk.ingest.IngestFieldValue-">createMappedValue</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputFieldName,
                  <a href="../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest">IngestFieldValue</a>&nbsp;inputFieldValue)</code>
-<div class="block">Process a single <a href="../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> and return a new value to be placed into the document for this input->output mapping.</div>
+<div class="block">Process a single <a href="../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> and return a new value to be placed into the document for this input->output
+ mapping.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1578,7 +1582,8 @@
 <td class="colLast"><span class="typeNameLabel">GlobalDataStructureFactory.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#addGlobalMapListener-java.lang.String-com.attivio.sdk.server.global.GlobalMapListener-">addGlobalMapListener</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                     <a href="../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global">GlobalMapListener</a>&nbsp;listener)</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Registers a <a href="../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to listen for changes to a persistent <a href="../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code></div>
+<div class="block">Registers a <a href="../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to listen for changes to a persistent <a href="../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with
+ <code>name</code></div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1608,7 +1613,7 @@
 <td class="colFirst"><code><a href="../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global">GlobalMap</a></code></td>
 <td class="colLast"><span class="typeNameLabel">GlobalDataStructureFactory.</span><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-">createGlobalMap</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Creates a persistent <a href="../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a>  with the given <code>name</code> if it does not yet exist.</div>
+<div class="block">Creates a persistent <a href="../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> with the given <code>name</code> if it does not yet exist.</div>
 </td>
 </tr>
 <tr class="rowColor">

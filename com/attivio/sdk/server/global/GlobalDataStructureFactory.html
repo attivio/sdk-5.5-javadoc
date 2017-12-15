@@ -131,7 +131,8 @@ public interface <span class="typeNameLabel">GlobalDataStructureFactory</span></
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#addGlobalMapListener-java.lang.String-com.attivio.sdk.server.global.GlobalMapListener-">addGlobalMapListener</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                     <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global">GlobalMapListener</a>&nbsp;listener)</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Registers a <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to listen for changes to a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code></div>
+<div class="block">Registers a <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to listen for changes to a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with
+ <code>name</code></div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -146,7 +147,7 @@ public interface <span class="typeNameLabel">GlobalDataStructureFactory</span></
 <td class="colFirst"><code><a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global">GlobalMap</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-">createGlobalMap</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Creates a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a>  with the given <code>name</code> if it does not yet exist.</div>
+<div class="block">Creates a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> with the given <code>name</code> if it does not yet exist.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -285,17 +286,18 @@ public interface <span class="typeNameLabel">GlobalDataStructureFactory</span></
 <pre><a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global">GlobalMap</a>&nbsp;createGlobalMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)
                    throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Creates a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a>  with the given <code>name</code> if it does not yet exist.  If it already exists, this method returns an
- instance of <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMap</code></a> that attaches to that existing persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a>.</div>
+<div class="block">Creates a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> with the given <code>name</code> if it does not yet exist. If it already exists,
+ this method returns an instance of <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMap</code></a> that attaches to that existing persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - the name of the persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> to create or attach to</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an instance of <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMap</code></a> representing either the newly created or pre-existing persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> with <code>name</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code> - if for some reason a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> with <code>name</code> cannot be created or attached to</dd>
+<dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code> - if for some reason a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> with <code>name</code> cannot be created or
+           attached to</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>#addGlobalMapListener(String, GlobalMapListener)}</code></dd>
+<dd><a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#addGlobalMapListener-java.lang.String-com.attivio.sdk.server.global.GlobalMapListener-"><code>addGlobalMapListener(String, GlobalMapListener)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -309,20 +311,26 @@ public interface <span class="typeNameLabel">GlobalDataStructureFactory</span></
                                <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global">GlobalMapListener</a>&nbsp;listener)
                         throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Registers a <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to listen for changes to a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code>
+<div class="block">Registers a <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to listen for changes to a persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with
+ <code>name</code>
 
- <p>The returned <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io"><code>Closeable</code></a> should be <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io"><code>closed</code></a> when updates are no longer needed.</p></div>
+ <p>
+ The returned <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io"><code>Closeable</code></a> should be <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io"><code>closed</code></a> when updates are no longer
+ needed.
+ </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - the name of the persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalMap.html" title="interface in com.attivio.sdk.server.global"><code>global map</code></a> to register a listener for</dd>
-<dd><code>listener</code> - the <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to register to listen for changes on the persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code></dd>
+<dd><code>listener</code> - the <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>GlobalMapListener</code></a> to register to listen for changes on the persistent
+          <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an instance of <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io"><code>Closeable</code></a> that the caller should call <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io"><code>close()</code></a> on when updates are no longer needed</dd>
+<dd>an instance of <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true" title="class or interface in java.io"><code>Closeable</code></a> that the caller should call <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html?is-external=true#close--" title="class or interface in java.io"><code>close()</code></a> on
+         when updates are no longer needed</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code> - if for some reason <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>listener</code></a> cannot be successfully registered to listen for changes 
-                           on the persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code></dd>
+<dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code> - if for some reason <a href="../../../../../com/attivio/sdk/server/global/GlobalMapListener.html" title="interface in com.attivio.sdk.server.global"><code>listener</code></a> cannot be successfully registered to listen
+           for changes on the persistent <a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>global map</code></a> with <code>name</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>#createGlobalMap(String)}</code></dd>
+<dd><a href="../../../../../com/attivio/sdk/server/global/GlobalDataStructureFactory.html#createGlobalMap-java.lang.String-"><code>createGlobalMap(String)</code></a></dd>
 </dl>
 </li>
 </ul>

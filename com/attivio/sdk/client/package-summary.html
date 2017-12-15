@@ -202,10 +202,10 @@
 <!--   -->
 </a>
 <h2 title="Package com.attivio.sdk.client Description">Package com.attivio.sdk.client Description</h2>
-<div class="block">Interfaces for client side AIE development.  
- The <code>com.attivio.service.ServiceFactory</code> can be used to create all clients represented here using various host+port/uri combinations.
+<div class="block">Interfaces for client side AIE development. The <code>com.attivio.sdk.service.ServiceFactory</code> can be used to create all
+ clients represented here using various host+port/uri combinations.
  
- <h1>Example Ingestion Code</h1> 
+ <h1>Example Ingestion Code</h1>
  
  <pre>
  System.setProperty("AIE_ZOOKEEPER", "myHost:17001");
@@ -218,9 +218,9 @@
  // wait for the commit to complete
  feeder.waitForCompletion();
  </pre>
-  
-  
- <h1>Example Search Code</h1> 
+ 
+ 
+ <h1>Example Search Code</h1>
  
  <pre>
  System.setProperty("AIE_ZOOKEEPER", "myHost:17001");
@@ -229,12 +229,12 @@
  req.addFacetField("myFacetField");
  // set more query parameters
  QueryResponse resp = searcher.search(req);
- // output response information 
+ // output response information
  </pre>
  
  
  
- <h1>Example Content Store Code</h1> 
+ <h1>Example Content Store Code</h1>
  
  <pre>
  System.setProperty("AIE_ZOOKEEPER", "myHost:17001");
@@ -261,14 +261,14 @@
  <a href="../../../../com/attivio/sdk/ingest/ContentPointer.html" title="interface in com.attivio.sdk.ingest"><code>ContentPointer</code></a> cp = contentStore.store("my_content_id", contentSource);
  
  // do something with the content pointer, like store it in a document
- <a href="../../../../com/attivio/sdk/ingest/IngestDocument.html" title="class in com.attivio.sdk.ingest"><code>IngestDocument</code></a> doc = new AttivioDocument("my_doc_id");
- <a href="../../../../com/attivio/sdk/ingest/IngestField.html" title="class in com.attivio.sdk.ingest"><code>IngestField</code></a><?> imageField = new <code>com.attivio.sdk.ingest.ContentPointerField</code>("image");
+ <a href="../../../../com/attivio/sdk/ingest/IngestDocument.html" title="class in com.attivio.sdk.ingest"><code>IngestDocument</code></a> doc = new IngestDocument("my_doc_id");
+ <a href="../../../../com/attivio/sdk/ingest/IngestField.html" title="class in com.attivio.sdk.ingest"><code>IngestField</code></a><?> imageField = new <a href="../../../../com/attivio/sdk/ingest/IngestField.html" title="class in com.attivio.sdk.ingest"><code>IngestField</code></a>("image");
  imageField.addFieldValue(cp);
  doc.setField(imageField);
  </pre>
 
  
- <h1>Example Connector Code</h1> 
+ <h1>Example Connector Code</h1>
  
  <pre>
  System.setProperty("AIE_ZOOKEEPER", "myHost:17001");
@@ -279,7 +279,7 @@
  </pre>
  
  
- Copyright 2015 Attivio Inc., All rights reserved.</div>
+ Copyright 2017 Attivio Inc., All rights reserved.</div>
 </div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar.bottom">

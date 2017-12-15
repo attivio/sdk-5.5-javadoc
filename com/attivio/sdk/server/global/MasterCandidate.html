@@ -181,10 +181,13 @@ public interface <span class="typeNameLabel">MasterCandidate</span></pre>
 <h4>notMaster</h4>
 <pre>void&nbsp;notMaster()</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Indicates that the current node's status as master has been revoked. 
+<div class="block">Indicates that the current node's status as master has been revoked.
 
- <p>The lock provided in <code>#nowMaster(Lock)</code> is no longer valid and calls to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Lock.html?is-external=true#unlock--" title="class or interface in java.util.concurrent.locks"><code>Lock.unlock()</code></a> are not necessary.</p>
- <p>The api will <b>NOT</b> automatically reenter the listener into the election.</p></div>
+ <p>
+ The lock provided in <a href="../../../../../com/attivio/sdk/server/global/MasterCandidate.html#nowMaster-java.util.concurrent.locks.Lock-java.lang.String-"><code>nowMaster(Lock, String)</code></a> is no longer valid and calls to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/Lock.html?is-external=true#unlock--" title="class or interface in java.util.concurrent.locks"><code>Lock.unlock()</code></a> are not
+ necessary.
+ <p>
+ The api will <b>NOT</b> automatically reenter the listener into the election.</div>
 </li>
 </ul>
 <a name="canMasterAcquire-java.lang.String-">

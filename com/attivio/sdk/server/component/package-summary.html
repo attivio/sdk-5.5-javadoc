@@ -71,7 +71,8 @@
 <div class="header">
 <h1 title="Package" class="title">Package&nbsp;com.attivio.sdk.server.component</h1>
 <div class="docSummary">
-<div class="block">Interfaces necessary to write components for the AIE system.</div>
+<div class="block">
+ Interfaces necessary to write components for the AIE system.</div>
 </div>
 <p>See:&nbsp;<a href="#package.description">Description</a></p>
 </div>
@@ -130,58 +131,76 @@
 <!--   -->
 </a>
 <h2 title="Package com.attivio.sdk.server.component Description">Package com.attivio.sdk.server.component Description</h2>
-<div class="block"><p>Interfaces necessary to write components for the AIE system.
- The interfaces are broken down into different functions for ingest, query and response transformers as well
- as services and general message handling stages.</p>
+<div class="block"><p>
+ Interfaces necessary to write components for the AIE system. The interfaces are broken down into different functions for
+ ingest, query and response transformers as well as services and general message handling stages.
+ </p>
  
- <p>The main interfaces are listed in the following tables.</p>
+ <p>
+ The main interfaces are listed in the following tables.
+ </p>
  
  <h3>Ingestion / Document transformers</h3>
  
- <b>Only one of the ingest transformer interfaces should be implemented by each customer class.
-    A configuration error will be throw if more than one is implemented.</b>
+ <b>Only one of the ingest transformer interfaces should be implemented by each customer class. A configuration error will be
+ throw if more than one is implemented.</b>
  
  <table>
-   <tr><th>Interface</th><th>Description</th></tr>
-   <tr>
-     <td><a href="../../../../../com/attivio/sdk/server/component/ingest/DocumentModifyingTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>DocumentModifyingTransformer</code></a><td>
-     <td>Interface for transformers that modify any/all aspects of the <code>AttivioDocument</code></td>
-   </tr> 
-   <tr>
-     <td><a href="../../../../../com/attivio/sdk/server/component/ingest/FieldValueCreatingTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>FieldValueCreatingTransformer</code></a><td>
-     <td>Interface for transformers that create a new <code>FieldValue</code> based on the value of another field</td>
-   </tr>
-   <tr>
-     <td><a href="../../../../../com/attivio/sdk/server/component/ingest/FieldValueModifyingTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>FieldValueModifyingTransformer</code></a><td>
-     <td>Interface for transformers that modify an existing <code>FieldValue</code></td>
-   </tr>
-   <tr>
-     <td><a href="../../../../../com/attivio/sdk/server/component/ingest/MultiOutputDocumentTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>MultiOutputDocumentTransformer</code></a><td>
-     <td>Interface for transformers that will output multiple documents or other <code>IndexMessage</code>s for each incoming <code>AttivioDocument</code></td>
-   </tr>
+ <tr>
+ <th>Interface</th>
+ <th>Description</th>
+ </tr>
+ <tr>
+ <td><a href="../../../../../com/attivio/sdk/server/component/ingest/DocumentModifyingTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>DocumentModifyingTransformer</code></a>
+ <td>
+ <td>Interface for transformers that modify any/all aspects of the <a href="../../../../../com/attivio/sdk/ingest/IngestDocument.html" title="class in com.attivio.sdk.ingest"><code>IngestDocument</code></a></td>
+ </tr>
+ <tr>
+ <td><a href="../../../../../com/attivio/sdk/server/component/ingest/FieldValueCreatingTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>FieldValueCreatingTransformer</code></a>
+ <td>
+ <td>Interface for transformers that create a new <a href="../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> based on the value of another
+ field</td>
+ </tr>
+ <tr>
+ <td><a href="../../../../../com/attivio/sdk/server/component/ingest/FieldValueModifyingTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>FieldValueModifyingTransformer</code></a>
+ <td>
+ <td>Interface for transformers that modify an existing <a href="../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a></td>
+ </tr>
+ <tr>
+ <td><a href="../../../../../com/attivio/sdk/server/component/ingest/MultiOutputDocumentTransformer.html" title="interface in com.attivio.sdk.server.component.ingest"><code>MultiOutputDocumentTransformer</code></a>
+ <td>
+ <td>Interface for transformers that will output multiple documents or other <a href="../../../../../com/attivio/sdk/ingest/IndexMessage.html" title="interface in com.attivio.sdk.ingest"><code>IndexMessage</code></a>s for
+ each incoming <a href="../../../../../com/attivio/sdk/ingest/IngestDocument.html" title="class in com.attivio.sdk.ingest"><code>IngestDocument</code></a></td>
+ </tr>
  </table>
-   
+ 
  <h3>Query and Response transformers</h3>
  <table>
-   <tr><th>Interface</th><th>Description</th></tr>
-   <tr>
-     <td><a href="../../../../../com/attivio/sdk/server/component/query/QueryTransformer.html" title="interface in com.attivio.sdk.server.component.query"><code>QueryTransformer</code></a><td>
-     <td>Interface for transformers that modify a <code>QueryRequest</code> before the search gets executed</td>
-   </tr> 
-   <tr>
-     <td><a href="../../../../../com/attivio/sdk/server/component/query/ResponseTransformer.html" title="interface in com.attivio.sdk.server.component.query"><code>ResponseTransformer</code></a><td>
-     <td>Interface for transformers that modify a <code>QueryResponse</code> after a query has been executed</td>
-   </tr>
+ <tr>
+ <th>Interface</th>
+ <th>Description</th>
+ </tr>
+ <tr>
+ <td><a href="../../../../../com/attivio/sdk/server/component/query/QueryTransformer.html" title="interface in com.attivio.sdk.server.component.query"><code>QueryTransformer</code></a>
+ <td>
+ <td>Interface for transformers that modify a <a href="../../../../../com/attivio/sdk/search/QueryRequest.html" title="class in com.attivio.sdk.search"><code>QueryRequest</code></a> before the search gets executed</td>
+ </tr>
+ <tr>
+ <td><a href="../../../../../com/attivio/sdk/server/component/query/ResponseTransformer.html" title="interface in com.attivio.sdk.server.component.query"><code>ResponseTransformer</code></a>
+ <td>
+ <td>Interface for transformers that modify a <a href="../../../../../com/attivio/sdk/search/QueryResponse.html" title="class in com.attivio.sdk.search"><code>QueryResponse</code></a> after a query has been executed</td>
+ </tr>
  </table>
-   
-  
+ 
+ 
 
 
 
 
-  <br/><br/>
+ <br/>
+ <br/>
 
- Copyright 2013 Attivio Inc., All rights reserved.</div>
+ Copyright 2017 Attivio Inc., All rights reserved.</div>
 </div>
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
 <div class="bottomNav"><a name="navbar.bottom">

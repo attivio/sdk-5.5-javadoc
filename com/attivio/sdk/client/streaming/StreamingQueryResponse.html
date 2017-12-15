@@ -110,13 +110,17 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Closeable.htm
  
  Use the <a href="../../../../../com/attivio/sdk/client/SearchClient.html#search-com.attivio.sdk.search.StreamingQueryRequest-"><code>SearchClient.search(StreamingQueryRequest)</code></a> to issues streaming queries.
  
- <p><b>IMPORTANT:</b>Results must be retrieved in the following order and result retrieval is <b>NOT</b> thread safe.  
- Attempting to retrieve a response type that was not requested may throw an exception.</p>
+ <p>
+ <b>IMPORTANT:</b>Results must be retrieved in the following order and result retrieval is <b>NOT</b> thread safe. Attempting to
+ retrieve a response type that was not requested may throw an exception.
+ </p>
  
  <ul>
-   <li>documents - via <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getDocumentIds--"><code>getDocumentIds()</code></a> or <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getDocuments--"><code>getDocuments()</code></a> depending on the value of the requested <a href="../../../../../com/attivio/sdk/search/StreamingQueryRequest.DocumentStreamingMode.html" title="enum in com.attivio.sdk.search"><code>StreamingQueryRequest.DocumentStreamingMode</code></a></li>
-   <li>facets - via <code>#getFacetBuckets()</code> - you must call <a href="../../../../../com/attivio/sdk/search/StreamingQueryRequest.html#setStreamFacets-boolean-"><code>StreamingQueryRequest.setStreamFacets(boolean)</code></a> to include facet results</li>
-   <li>query response - via <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getQueryResponse--"><code>getQueryResponse()</code></a></li>
+ <li>documents - via <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getDocumentIds--"><code>getDocumentIds()</code></a> or <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getDocuments--"><code>getDocuments()</code></a> depending on the value of the requested
+ <a href="../../../../../com/attivio/sdk/search/StreamingQueryRequest.DocumentStreamingMode.html" title="enum in com.attivio.sdk.search"><code>StreamingQueryRequest.DocumentStreamingMode</code></a></li>
+ <li>facets - via <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getFacets--"><code>getFacets()</code></a> - you must call <a href="../../../../../com/attivio/sdk/search/StreamingQueryRequest.html#setStreamFacets-boolean-"><code>StreamingQueryRequest.setStreamFacets(boolean)</code></a> to include facet
+ results</li>
+ <li>query response - via <a href="../../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html#getQueryResponse--"><code>getQueryResponse()</code></a></li>
  </ul></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>

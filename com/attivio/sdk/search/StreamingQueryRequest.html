@@ -181,15 +181,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/search/StreamingQueryRequest.html#getBufferSize--">getBufferSize</a></span>()</code>
-<div class="block">Registers the buffer size (in bytes) to be used by this <code>StreamingResponseClientBuilder</code>
- when building a <code>StreamingQueryResponse</code>;</div>
+<div class="block">Registers the buffer size (in bytes) to be used by this <code>StreamingResponseClientBuilder</code> when building a
+ <a href="../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html" title="interface in com.attivio.sdk.client.streaming"><code>StreamingQueryResponse</code></a>;</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/search/StreamingQueryRequest.html#getConnectTimeout--">getConnectTimeout</a></span>()</code>
-<div class="block">Registers the connection timeout (milliseconds) to be used by this <code>StreamingResponseClientBuilder</code>
- when building a <code>StreamingQueryResponse</code>;</div>
+<div class="block">Registers the connection timeout (milliseconds) to be used by this <code>StreamingResponseClientBuilder</code> when building
+ a <a href="../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html" title="interface in com.attivio.sdk.client.streaming"><code>StreamingQueryResponse</code></a>;</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -314,12 +314,16 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getConnectTimeout</h4>
 <pre>public&nbsp;long&nbsp;getConnectTimeout()</pre>
-<div class="block">Registers the connection timeout (milliseconds) to be used by this <code>StreamingResponseClientBuilder</code>
- when building a <code>StreamingQueryResponse</code>;
+<div class="block">Registers the connection timeout (milliseconds) to be used by this <code>StreamingResponseClientBuilder</code> when building
+ a <a href="../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html" title="interface in com.attivio.sdk.client.streaming"><code>StreamingQueryResponse</code></a>;
  
- <p>The client must connect to the stream within this timeout or the query will fail.</p>
+ <p>
+ The client must connect to the stream within this timeout or the query will fail.
+ </p>
  
- <p>The default is 60,000 milliseconds or 1 minute.</p></div>
+ <p>
+ The default is 60,000 milliseconds or 1 minute.
+ </p></div>
 </li>
 </ul>
 <a name="getBufferSize--">
@@ -329,10 +333,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getBufferSize</h4>
 <pre>public&nbsp;int&nbsp;getBufferSize()</pre>
-<div class="block">Registers the buffer size (in bytes) to be used by this <code>StreamingResponseClientBuilder</code>
- when building a <code>StreamingQueryResponse</code>;
+<div class="block">Registers the buffer size (in bytes) to be used by this <code>StreamingResponseClientBuilder</code> when building a
+ <a href="../../../../com/attivio/sdk/client/streaming/StreamingQueryResponse.html" title="interface in com.attivio.sdk.client.streaming"><code>StreamingQueryResponse</code></a>;
  
- <p>The default is 16,384 bytes or 16 kilobytes.</p></div>
+ <p>
+ The default is 16,384 bytes or 16 kilobytes.
+ </p></div>
 </li>
 </ul>
 <a name="getDocumentStreamingMode--">

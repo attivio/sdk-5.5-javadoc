@@ -122,15 +122,18 @@ extends <a href="../../../../com/attivio/sdk/esb/AbstractPlatformMessage.html" t
 implements <a href="../../../../com/attivio/sdk/util/LocaleAware.html" title="interface in com.attivio.sdk.util">LocaleAware</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">Represents a search query and all associated meta data about the query such as sorting, faceting, linguistic options, etc.
 
- <p>When a QueryRequest is sent to AIE, a <a href="../../../../com/attivio/sdk/search/QueryResponse.html" title="class in com.attivio.sdk.search"><code>QueryResponse</code></a> will be returned as the result.
-    Use a <code>com.attivio.client.SearchClient</code> for sending QueryRequests to an AIE instance.</p>
+ <p>
+ When a QueryRequest is sent to AIE, a <a href="../../../../com/attivio/sdk/search/QueryResponse.html" title="class in com.attivio.sdk.search"><code>QueryResponse</code></a> will be returned as the result. Use a
+ <a href="../../../../com/attivio/sdk/client/SearchClient.html" title="interface in com.attivio.sdk.client"><code>SearchClient</code></a> for sending QueryRequests to an AIE instance.
 
 
  <h4>Paging</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setOffset-long-"><code>setOffset(long)</code></a> and <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setRows-long-"><code>setRows(long)</code></a> methods can be used in order to page through results.
-    <b>Offset</b> indicates the index into the overall result set for the first returned row. <b>Rows</b> indicates the
-    number of rows that will be returned.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setOffset-long-"><code>setOffset(long)</code></a> and <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setRows-long-"><code>setRows(long)</code></a> methods can be
+ used in order to page through results. <b>Offset</b> indicates the index into the overall result set for the first returned
+ row. <b>Rows</b> indicates the number of rows that will be returned.
+ </p>
 
  <pre class="code-java">
  QueryRequest request;
@@ -145,31 +148,38 @@ implements <a href="../../../../com/attivio/sdk/util/LocaleAware.html" title="in
  request = new QueryRequest("*:*");
  request.setOffset(10);
  request.setRows(10);
- // ... (Submit the search and handle response)</pre>
+ // ... (Submit the search and handle response)
+ </pre>
 
  <h4>Query Resubmission</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setMaxResubmits-int-"><code>setMaxResubmits(int)</code></a> method can be used to control automatic query resubmission. A QueryRequest may be automatically
-    resubmitted to the search engine in case of recoverable error, 0 result response, or other reasons. The configuration for
-    AIE's query workflows will indicate what resubmission may occur. NOTE: resubmission is disabled by default.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setMaxResubmits-int-"><code>setMaxResubmits(int)</code></a> method can be used to control automatic query resubmission. A QueryRequest may be
+ automatically resubmitted to the search engine in case of recoverable error, 0 result response, or other reasons. The
+ configuration for AIE's query workflows will indicate what resubmission may occur. NOTE: resubmission is disabled by default.
+ </p>
 
  <pre class="code-java">
  // Allow 1 resubmission
  QueryRequest request = new QueryRequest("*:*");
  request.setMaxResubmits(1);
- // ... (submit the search and handle response)</pre>
+ // ... (submit the search and handle response)
+ </pre>
 
  <h4>Field Expressions</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addField-java.lang.String-"><code>addField(String)</code></a> and <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addField-com.attivio.sdk.search.fields.FieldExpression-"><code>addField(FieldExpression)</code></a> methods can be used to request specified fields
-    to returned for the matching documents. By default, all stored fields will be returned. NOTE: if you add a field expression
-    and still want all fields returned in addition to the FieldExpression, you should add the "*" field as well (see below example).
-    <a href="../../../../com/attivio/sdk/search/fields/FieldExpression.html" title="class in com.attivio.sdk.search.fields"><code>FieldExpression</code></a>s allow returning custom fields derived from stored fields (or generated based on query executed).<p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addField-java.lang.String-"><code>addField(String)</code></a> and <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addField-com.attivio.sdk.search.fields.FieldExpression-"><code>addField(FieldExpression)</code></a> methods can be used to request
+ specified fields to returned for the matching documents. By default, all stored fields will be returned. NOTE: if you add a
+ field expression and still want all fields returned in addition to the FieldExpression, you should add the "*" field as well
+ (see below example). <a href="../../../../com/attivio/sdk/search/fields/FieldExpression.html" title="class in com.attivio.sdk.search.fields"><code>FieldExpression</code></a>s allow returning custom fields derived from stored fields (or generated based on
+ query executed).
+ <p>
 
  <pre class="code-java">
  QueryRequest request;
 
- //Request just the "text" field
+ // Request just the "text" field
  request = new QueryRequest("*:*");
  request.addField("text");
  // ... (submit the search and handle response)
@@ -177,71 +187,92 @@ implements <a href="../../../../com/attivio/sdk/util/LocaleAware.html" title="in
  // Request the "Geo Distance" Field expression (include all stored fields as well)
  request = new QueryRequest("*:*");
  request.addField("*"); // Request all stored fields
- request.addField( new GeoDistance("position", centerLatitude, centerLongitude) );
- // ... (submit the search and handle response)</pre>
+ request.addField(new GeoDistance("position", centerLatitude, centerLongitude));
+ // ... (submit the search and handle response)
+ </pre>
 
  <h4>Boost Queries</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addBoostQuery-com.attivio.sdk.search.query.Query-"><code>addBoostQuery(Query)</code></a> method allows adding a query to use for boosting purposes. The documents that match this
-    query will get an additional boost however this boost query will not affect the documents that match this QueryRequest.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addBoostQuery-com.attivio.sdk.search.query.Query-"><code>addBoostQuery(Query)</code></a> method allows adding a query to use for boosting purposes. The documents that
+ match this query will get an additional boost however this boost query will not affect the documents that match this
+ QueryRequest.
+ </p>
 
  <pre class="code-java">
  // Match all documents, boosting documents with "foo" in the title higher
  QueryRequest request = new QueryRequest("*:*");
- request.addBoostQuery( new QueryString("title:foo") );
- // ... (submit the search and handle response)</pre>
+ request.addBoostQuery(new QueryString("title:foo"));
+ // ... (submit the search and handle response)
+ </pre>
 
  <h4>Score Functions</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addScoreFunction-com.attivio.sdk.search.fields.FieldExpression-"><code>addScoreFunction(FieldExpression)</code></a> method allows adding function based boosts to documents matching the QueryRequest.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addScoreFunction-com.attivio.sdk.search.fields.FieldExpression-"><code>addScoreFunction(FieldExpression)</code></a> method allows adding function based boosts to documents matching the
+ QueryRequest.
+ </p>
 
  <pre class="code-java">
  // Give a static boost to documents based on the indexed value for the "staticboost" field
  QueryRequest request = new QueryRequest("*:*");
- request.addScoreFunction( "staticboost" );
- // ... (submit the search and handle response)</pre>
+ request.addScoreFunction("staticboost");
+ // ... (submit the search and handle response)
+ </pre>
 
  <h4>Sorting</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addSort-com.attivio.sdk.search.Sort-"><code>addSort(Sort)</code></a> method allows specifying the sort criteria for the QueryRequest. If no sort criteria is added, then
-    the QueryRequest will be sorted by score descending. Multiple levels of sorting can be added to perform tie-breaking in the
-    event that multiple documents have the same value for a sort.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addSort-com.attivio.sdk.search.Sort-"><code>addSort(Sort)</code></a> method allows specifying the sort criteria for the QueryRequest. If no sort criteria is
+ added, then the QueryRequest will be sorted by score descending. Multiple levels of sorting can be added to perform
+ tie-breaking in the event that multiple documents have the same value for a sort.
+ </p>
 
  <pre class="code-java">
  // Sort by "size" ascending
  QueryRequest request = new QueryRequest("*:*");
- request.addSort( new Sort("size", Sort.SortOrder.DESCENDING) );
- // ... (submit the search and handle response)</pre>
+ request.addSort(new Sort("size", Sort.SortOrder.DESCENDING));
+ // ... (submit the search and handle response)
+ </pre>
 
  <h4>Faceting</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addFacet-com.attivio.sdk.search.facet.FacetRequest...-"><code>addFacet(FacetRequest[])</code></a> and <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addFacetField-java.lang.String...-"><code>addFacetField(String[])</code></a> methods allow requesting facets to be returned
-    along with the results. There are different types of facets that can be requested for a query. The simplest will return
-    counts for all discrete values for a facet field (<a href="../../../../com/attivio/sdk/search/facet/FacetRequest.html" title="class in com.attivio.sdk.search.facet"><code>FacetRequest</code></a>). <a href="../../../../com/attivio/sdk/search/facet/RangeFacetRequest.html" title="class in com.attivio.sdk.search.facet"><code>RangeFacetRequest</code></a>
-    can be used to return buckets for specified ranges of values. <a href="../../../../com/attivio/sdk/search/facet/FilterBasedFacetRequest.html" title="class in com.attivio.sdk.search.facet"><code>FilterBasedFacetRequest</code></a> can
-    be used to get a bucket count for any arbitrary <a href="../../../../com/attivio/sdk/search/query/Query.html" title="class in com.attivio.sdk.search.query"><code>Query</code></a> over the result set.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addFacet-com.attivio.sdk.search.facet.FacetRequest...-"><code>addFacet(FacetRequest[])</code></a> and <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addFacetField-java.lang.String...-"><code>addFacetField(String[])</code></a> methods allow requesting
+ facets to be returned along with the results. There are different types of facets that can be requested for a query. The
+ simplest will return counts for all discrete values for a facet field (<a href="../../../../com/attivio/sdk/search/facet/FacetRequest.html" title="class in com.attivio.sdk.search.facet"><code>FacetRequest</code></a>).
+ <a href="../../../../com/attivio/sdk/search/facet/RangeFacetRequest.html" title="class in com.attivio.sdk.search.facet"><code>RangeFacetRequest</code></a> can be used to return buckets for specified ranges of values.
+ <a href="../../../../com/attivio/sdk/search/facet/FilterBasedFacetRequest.html" title="class in com.attivio.sdk.search.facet"><code>FilterBasedFacetRequest</code></a> can be used to get a bucket count for any arbitrary <a href="../../../../com/attivio/sdk/search/query/Query.html" title="class in com.attivio.sdk.search.query"><code>Query</code></a>
+ over the result set.
+ </p>
 
  <pre class="code-java">
  QueryRequest request = new QueryRequest("*:*");
  // request a facet for the author field
  request.addFacetField("author");
  // request a "range" facet with 10 buckets for values between 0 and 1000
- request.addFacet( new RangeFacetRequest("size", 0, 1000, 10) );
- // ... (submit the search and handle response)</pre>
+ request.addFacet(new RangeFacetRequest("size", 0, 1000, 10));
+ // ... (submit the search and handle response)
+ </pre>
 
  <h4>Filtering</h4>
 
- <p>The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addFilter-com.attivio.sdk.search.query.Query-"><code>addFilter(Query)</code></a> method allows adding filters to the QueryRequest to restrict the matching documents
-    to those that also match the filter. NOTE: applied filters do not modify the score of the document.</p>
+ <p>
+ The <a href="../../../../com/attivio/sdk/search/QueryRequest.html#addFilter-com.attivio.sdk.search.query.Query-"><code>addFilter(Query)</code></a> method allows adding filters to the QueryRequest to restrict the matching documents
+ to those that also match the filter. NOTE: applied filters do not modify the score of the document.
+ </p>
 
  <pre class="code-java">
  // Filter result set to the "documents" table
  QueryRequest request = new QueryRequest("*:*");
- request.addFilter( new PhraseQuery("table", "documents") );
- // ... (submit the search and handle response)</pre>
-
- <p>WARNING: QueryRequests should not be reused.  Reusing a QueryRequest for multiple searches can have adverse
- effects especially if run inside a single JVM.</p></div>
+ request.addFilter(new PhraseQuery("table", "documents"));
+ // ... (submit the search and handle response)
+ </pre>
+ 
+ <p>
+ WARNING: QueryRequests should not be reused. Reusing a QueryRequest for multiple searches can have adverse effects especially
+ if run inside a single JVM.
+ </p></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../serialized-form.html#com.attivio.sdk.search.QueryRequest">Serialized Form</a></dd>
@@ -2394,8 +2425,8 @@ public&nbsp;void&nbsp;setRelevancyModelName(<a href="https://docs.oracle.com/jav
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../com/attivio/sdk/search/QueryRequest.html#setRelevancyModelNames-java.lang.String...-"><code>setRelevancyModelNames(String...)</code></a> instead.</span></div>
 <div class="block">Sets the name of the relevancy model to use for this query.
 
- <p>With default configurations, this can be set to "noop" in order to
-    apply an empty relevancy model.</p></div>
+ <p>
+ With default configurations, this can be set to "noop" in order to apply an empty relevancy model.</div>
 </li>
 </ul>
 <a name="isPartialResults--">

@@ -126,41 +126,51 @@ var activeTableTab = "activeTableTab";
 extends <a href="../../../../../com/attivio/sdk/search/fields/UnaryFieldExpression.html" title="class in com.attivio.sdk.search.fields">UnaryFieldExpression</a></pre>
 <div class="block">Field Expression to calculate a Freshness score.
 
- <p>The freshness score function will boost documents that are close to a center date.</p>
+ <p>
+ The freshness score function will boost documents that are close to a center date.
+ </p>
 
- <p>The standard freshness calculation for a document is as follows:<br>
-     freshness = 1 / pow( abs(<a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a> - 
-                 freshnessValue(<a href="../../../../../com/attivio/sdk/search/fields/UnaryFieldExpression.html#getFieldName--"><code>fieldName</code></a>, doc)) + 1, "
-                 <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getDecay--"><code>decay</code></a> )<br>
-     freshnessValue(<a href="../../../../../com/attivio/sdk/search/fields/UnaryFieldExpression.html#getFieldName--"><code>fieldName</code></a>, doc) = the indexed freshness 
-                 value for <code>fieldName</code> in <code>doc</code>.</p>
+ <p>
+ The standard freshness calculation for a document is as follows:<br>
+ freshness = 1 / pow( abs(<a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a> - freshnessValue(<a href="../../../../../com/attivio/sdk/search/fields/UnaryFieldExpression.html#getFieldName--"><code>fieldName</code></a>,
+ doc)) + 1, " <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getDecay--"><code>decay</code></a> )<br>
+ freshnessValue(<a href="../../../../../com/attivio/sdk/search/fields/UnaryFieldExpression.html#getFieldName--"><code>fieldName</code></a>, doc) = the indexed freshness value for <code>fieldName</code> in
+ <code>doc</code>.
+ </p>
 
- <p>By default, the <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a> value is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html?is-external=true#currentTimeMillis--" title="class or interface in java.lang"><code>System.currentTimeMillis()</code></a>/1000 
-    (ie. current seconds since epoch). You can specify a different <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#setCenter-java.util.Date-"><code>center</code></a> 
-    using the appropriate constructor, or by using <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#setCenter-java.util.Date-"><code>setCenter(Date)</code></a>.</p>
+ <p>
+ By default, the <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a> value is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html?is-external=true#currentTimeMillis--" title="class or interface in java.lang"><code>System.currentTimeMillis()</code></a>/1000 (ie. current seconds
+ since epoch). You can specify a different <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#setCenter-java.util.Date-"><code>center</code></a> using the appropriate constructor, or by
+ using <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#setCenter-java.util.Date-"><code>setCenter(Date)</code></a>.
+ </p>
 
- <p>NOTE: By Default the <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a> value will be rounded up to the next hour during 
-    evaluation. This greatly improves cache hits when including freshness scores in searches. You can control 
-    the units used for rounding (minutes, seconds, etc) by setting the
-    <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#setCenterResolution-com.attivio.sdk.util.TimeResolution-"><code>center time units</code></a>.</p>
+ <p>
+ NOTE: By Default the <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a> value will be rounded up to the next hour during evaluation. This
+ greatly improves cache hits when including freshness scores in searches. You can control the units used for rounding (minutes,
+ seconds, etc) by setting the <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#setCenterResolution-com.attivio.sdk.util.TimeResolution-"><code>center time units</code></a>.
+ </p>
 
- <p>The <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getDecay--"><code>decay</code></a> is used to accelerate or decelerate the change in 
-    score as documents approach the <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a>. The freshness score 
-    will be a number between 0.0 and 1.0 for positive decay values. Larger values for the decay 
-    will result in a faster dropoff in boost as the document's "date" diverges from the "center".</p>
+ <p>
+ The <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getDecay--"><code>decay</code></a> is used to accelerate or decelerate the change in score as documents approach the
+ <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#getCenter--"><code>center</code></a>. The freshness score will be a number between 0.0 and 1.0 for positive decay values.
+ Larger values for the decay will result in a faster dropoff in boost as the document's "date" diverges from the "center".
+ </p>
 
- <p>The freshness score can consist of <code>ranges</code> 
-    instead of a static decay function. Ranges contain a <code>maxDelta</code> distance from the table's 
-    <code>center</code> in the specified <code>timeUnit</code> (by default seconds). When ranges are specified, 
-    the score is determined by the <code>quadraticCoefficient</code> a, <code>linearCoefficient</code> b, and 
-    <code>constant</code> c, which are used as the constants of the quadratic equation <code>y = ax^2 + bx + c</code>, 
-    where x is the time delta from the center in the given unit and y is the final score. Setting a and b to zero will 
-    result in the constant score c for a range.</p>.
+ <p>
+ The freshness score can consist of <a href="../../../../../com/attivio/sdk/search/fields/Freshness.html#addRange-long-com.attivio.sdk.util.TimeResolution-double-double-double-"><code>ranges</code></a> instead of a
+ static decay function. Ranges contain a <code>maxDelta</code> distance from the table's <code>center</code> in the specified
+ <code>timeUnit</code> (by default seconds). When ranges are specified, the score is determined by the
+ <code>quadraticCoefficient</code> a, <code>linearCoefficient</code> b, and <code>constant</code> c, which are used as the
+ constants of the quadratic equation <code>y = ax^2 + bx + c</code>, where x is the time delta from the center in the given unit
+ and y is the final score. Setting a and b to zero will result in the constant score c for a range.
+ </p>
+ .
  
- <p>Ranges are not additive; the score is determined only by the most specific (smallest delta from the center) 
-    matching range. If the function returns a value less than zero, the freshness score is zero.  The final 
-    score is normalized to a score of 0 to 1 by dividing the function result by the max allowed function value 
-    for all ranges.</p></div>
+ <p>
+ Ranges are not additive; the score is determined only by the most specific (smallest delta from the center) matching range. If
+ the function returns a value less than zero, the freshness score is zero. The final score is normalized to a score of 0 to 1 by
+ dividing the function result by the max allowed function value for all ranges.
+ </p></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../serialized-form.html#com.attivio.sdk.search.fields.Freshness">Serialized Form</a></dd>

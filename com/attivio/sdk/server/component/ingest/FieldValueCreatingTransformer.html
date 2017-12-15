@@ -138,7 +138,8 @@ extends <a href="../../../../../../com/attivio/sdk/server/component/ingest/BaseD
 <td class="colFirst"><code><a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest">IngestFieldValue</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../com/attivio/sdk/server/component/ingest/FieldValueCreatingTransformer.html#createMappedValue-java.lang.String-com.attivio.sdk.ingest.IngestFieldValue-">createMappedValue</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputFieldName,
                  <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest">IngestFieldValue</a>&nbsp;inputFieldValue)</code>
-<div class="block">Process a single <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> and return a new value to be placed into the document for this input->output mapping.</div>
+<div class="block">Process a single <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> and return a new value to be placed into the document for this input->output
+ mapping.</div>
 </td>
 </tr>
 </table>
@@ -172,11 +173,12 @@ extends <a href="../../../../../../com/attivio/sdk/server/component/ingest/BaseD
 <pre><a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest">IngestFieldValue</a>&nbsp;createMappedValue(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputFieldName,
                                    <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest">IngestFieldValue</a>&nbsp;inputFieldValue)
                             throws <a href="../../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Process a single <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> and return a new value to be placed into the document for this input->output mapping.</div>
+<div class="block">Process a single <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> and return a new value to be placed into the document for this input->output
+ mapping.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>fieldName</code> - The input field name being processed.</dd>
-<dd><code>fv</code> - The value to process.</dd>
+<dd><code>inputFieldName</code> - The input field name being processed.</dd>
+<dd><code>inputFieldValue</code> - The value to process.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the new <a href="../../../../../../com/attivio/sdk/ingest/IngestFieldValue.html" title="class in com.attivio.sdk.ingest"><code>IngestFieldValue</code></a> or null to not output a value for this input value.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

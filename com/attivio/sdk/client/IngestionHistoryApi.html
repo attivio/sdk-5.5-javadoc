@@ -188,7 +188,8 @@ var activeTableTab = "activeTableTab";
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/IngestionHistoryApi.html#getUnvisited-java.lang.String-java.util.Date-">getUnvisited</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace,
             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;since)</code>
-<div class="block">Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited since the time <code>since</code>.</div>
+<div class="block">
+ Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited since the time <code>since</code>.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -340,7 +341,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getUnvisited(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace)
                        throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited in the current session. The unvisited keys are those for
- which there has been a <code>#recordVisit(String, String, byte[])</code> call at some point, but not one since the last
+ which there has been a <a href="../../../../com/attivio/sdk/client/IngestionHistoryApi.html#visit-java.lang.String-java.lang.String-byte:A-"><code>visit(String, String, byte[])</code></a> call at some point, but not one since the last
  <a href="../../../../com/attivio/sdk/client/IngestionHistoryApi.html#startSession-java.lang.String-"><code>startSession(String)</code></a> call. This allows a connector to record visits each time it runs and get a list of documents
  that are not present on subsequent runs. Since these documents have been removed from the source system, the connector may
  decide to remove them from the Attivio system.
@@ -366,8 +367,9 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getUnvisited(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;namespace,
                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;since)
                        throws <a href="../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited since the time <code>since</code>. The unvisited keys are those
- for which there has been a <code>#recordVisit(String, String, byte[])</code> call at some point, but not one since the time
+<div class="block"><p>
+ Returns an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of the keys that have not been visited since the time <code>since</code>. The unvisited keys are those
+ for which there has been a <a href="../../../../com/attivio/sdk/client/IngestionHistoryApi.html#visit-java.lang.String-java.lang.String-byte:A-"><code>visit(String, String, byte[])</code></a> call at some point, but not one since the time
  <code>since</code>. This allows a connector to record visits each time it runs and get a list of documents that are not present on
  subsequent runs. Since these documents have been removed from the source system, the connector may decide to remove them from
  the Attivio system.

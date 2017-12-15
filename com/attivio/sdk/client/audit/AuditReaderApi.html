@@ -135,7 +135,7 @@ var activeTableTab = "activeTableTab";
  <h3>Caveats</h3>
  <ul>
  <li>For performance reasons some implementations may delay writes of document ids when collecting audit information. In these
- cases, the document ID will appear as {@link #UNAVAILABLE. A subsequent call of the API should result in a valid id.
+ cases, the document ID will appear as <a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#UNAVAILABLE"><code>UNAVAILABLE</code></a>. A subsequent call of the API should result in a valid id.</li>
  </ul>
  <p>
  $Revision$</div>
@@ -195,14 +195,14 @@ var activeTableTab = "activeTableTab";
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#getAuditDetails-java.lang.String-java.util.Date-java.util.Date-">getAuditDetails</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;start,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;end)</code>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit">AuditDetail</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#getAuditDetails-java.lang.String-java.util.UUID-">getAuditDetails</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -293,26 +293,21 @@ var activeTableTab = "activeTableTab";
 <tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#waitForCompletion-java.util.UUID-">waitForCompletion</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#waitForCompletion-java.util.UUID-long-">waitForCompletion</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
                  long&nbsp;timeout)</code>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing.</div>
 </td>
 </tr>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#whenSearchable-java.lang.String-java.util.UUID-">whenSearchable</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)</code>
-<div class="block">Returns the earliest date an index commit was received after all documents
- for the client were indexed.</div>
+<div class="block">Returns the earliest date an index commit was received after all documents for the client were indexed.</div>
 </td>
 </tr>
 <tr id="i19" class="rowColor">
@@ -320,8 +315,7 @@ var activeTableTab = "activeTableTab";
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/audit/AuditReaderApi.html#whenSearchable-java.lang.String-java.util.UUID-java.lang.String-">whenSearchable</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId)</code>
-<div class="block">Returns the earliest date an index commit was received after the document was
- indexed.</div>
+<div class="block">Returns the earliest date an index commit was received after the document was indexed.</div>
 </td>
 </tr>
 </table>
@@ -467,8 +461,7 @@ var activeTableTab = "activeTableTab";
                                 throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Returns a list of IDs for all documents which have completed processing during the specified date range. A document is
  considered complete when all possible side-effects of processing the document have occurred. This state is associated with
- the receipt of a <code>DocumentAuditDetail</code> for the document with a <code>resultCode</code> of
- <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#COMPLETED"><code>ProcessingResultCode.COMPLETED</code></a>.</div>
+ the receipt of an <a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a> for the document with a <code>resultCode</code> of <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#COMPLETED"><code>ProcessingResultCode.COMPLETED</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>start</code> - the inclusive start date.</dd>
@@ -488,8 +481,7 @@ var activeTableTab = "activeTableTab";
                                 throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Returns a list of IDs for all documents which have completed processing which were sent by the specified client. A document
  is considered complete when all possible side-effects of processing the document have occurred. This state is associated with
- the receipt of a <code>DocumentAuditDetail</code> for the document with a <code>resultCode</code> of
- <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#COMPLETED"><code>ProcessingResultCode.COMPLETED</code></a>.</div>
+ the receipt of an <a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a> for the document with a <code>resultCode</code> of <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#COMPLETED"><code>ProcessingResultCode.COMPLETED</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>clientId</code> - restricts results to clientId, <code>null</code> not allowed.</dd>
@@ -556,10 +548,10 @@ var activeTableTab = "activeTableTab";
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId)
              throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Returns the earliest date an index commit was received after the document was
- indexed. A document is considered indexed after the receipt of a <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#OK"><code>ProcessingResultCode.OK</code></a> audit result for the index
- content dispatcher component ( <code>&lt;indexName&gt;-content-dispatcher</code>). Documents which are not marked <code>OK</code> by the
- indexer are not considered by this method as they will never become searchable.</div>
+<div class="block">Returns the earliest date an index commit was received after the document was indexed. A document is considered indexed after
+ the receipt of a <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#OK"><code>ProcessingResultCode.OK</code></a> audit result for the index content dispatcher component (
+ <code>&lt;indexName&gt;-content-dispatcher</code>). Documents which are not marked <code>OK</code> by the indexer are not considered by this
+ method as they will never become searchable.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>indexName</code> - the name of the index. To look up index related information, the actual Attivio component that interfaces to
@@ -585,10 +577,10 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;whenSearchable(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)
              throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Returns the earliest date an index commit was received after all documents
- for the client were indexed. A document is considered indexed after the receipt of a <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#OK"><code>ProcessingResultCode.OK</code></a> audit
- result for the index content dispatcher component (<code>&lt;indexName&gt;-content-dispatcher</code>). Documents which are not marked
- <code>OK</code> by the indexer are not considered by this method as they will never become searchable.</div>
+<div class="block">Returns the earliest date an index commit was received after all documents for the client were indexed. A document is
+ considered indexed after the receipt of a <a href="../../../../../com/attivio/sdk/esb/ProcessingResultCode.html#OK"><code>ProcessingResultCode.OK</code></a> audit result for the index content dispatcher
+ component (<code>&lt;indexName&gt;-content-dispatcher</code>). Documents which are not marked <code>OK</code> by the indexer are not
+ considered by this method as they will never become searchable.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>indexName</code> - the name of the index. To look up index related information, the actual Attivio component that interfaces to
@@ -598,9 +590,8 @@ var activeTableTab = "activeTableTab";
           will be prepended.</dd>
 <dd><code>clientId</code> - restricts results to clientId, <code>null</code> not allowed.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the date when all documents submitted (so far) by client
-         <code>clientId</code> became searchable or <code>null</code> if all documents are not yet searchable <i>or</i> no documents
-         have been submitted by the client.</dd>
+<dd>the date when all documents submitted (so far) by client <code>clientId</code> became searchable or <code>null</code> if all
+         documents are not yet searchable <i>or</i> no documents have been submitted by the client.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code> - if query cannot be executed</dd>
 </dl>
@@ -615,9 +606,9 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit">AuditDetail</a>&gt;&nbsp;getAuditDetails(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;docId,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)
                                throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document. This list may include the audit
- information for a number of components and will include the creation and completion audit records if available. This method
- may be called while the document is still being processed.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document. This list may include the audit information
+ for a number of components and will include the creation and completion audit records if available. This method may be called
+ while the document is still being processed.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>docId</code> - the document ID to match</dd>
@@ -637,10 +628,10 @@ var activeTableTab = "activeTableTab";
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;start,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;end)
                                throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Returns an <code>Iterable</code> of <code>DocumentAuditDetail</code> associated with the document. This list may include the audit
- information for a number of components and will include the creation and completion audit records if available. This method
- may be called while the document is still being processed. <code>null</code> values for <code>start</code> and <code>end</code> will return
- all available audit records for the document.</div>
+<div class="block">Returns an <code>Iterable</code> of <a href="../../../../../com/attivio/sdk/client/audit/AuditDetail.html" title="interface in com.attivio.sdk.client.audit"><code>AuditDetail</code></a>s associated with the document. This list may include the audit information
+ for a number of components and will include the creation and completion audit records if available. This method may be called
+ while the document is still being processed. <code>null</code> values for <code>start</code> and <code>end</code> will return all available
+ audit records for the document.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>docId</code> - the document ID to match</dd>
@@ -659,11 +650,10 @@ var activeTableTab = "activeTableTab";
 <h4>waitForCompletion</h4>
 <pre><a href="../../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a>&nbsp;waitForCompletion(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId)
                               throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing. If this method is called while feeding of new documents or messages occur in a separate thread or
- process, it may hang indefinitely or return prematurely. The only way to ensure that no processing associated with the client
- is occurring is to feed and waitForCompletion from the same thread of control.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing. If this method is called while
+ feeding of new documents or messages occur in a separate thread or process, it may hang indefinitely or return prematurely.
+ The only way to ensure that no processing associated with the client is occurring is to feed and waitForCompletion from the
+ same thread of control.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>clientId</code> - restricts results to clientId, <code>null</code> not allowed.</dd>
@@ -683,11 +673,10 @@ var activeTableTab = "activeTableTab";
 <pre><a href="../../../../../com/attivio/sdk/client/audit/AuditClientSummary.html" title="interface in com.attivio.sdk.client.audit">AuditClientSummary</a>&nbsp;waitForCompletion(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html?is-external=true" title="class or interface in java.util">UUID</a>&nbsp;clientId,
                                      long&nbsp;timeout)
                               throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Waits until all documents and messages
- created by this client have
- completed processing. If this method is called while feeding of new documents or messages occur in a separate thread or
- process, it may hang indefinitely or return prematurely. The only way to ensure that no processing associated with the client
- is occurring is to feed and waitForCompletion from the same thread of control.</div>
+<div class="block">Waits until all documents and messages created by this client have completed processing. If this method is called while
+ feeding of new documents or messages occur in a separate thread or process, it may hang indefinitely or return prematurely.
+ The only way to ensure that no processing associated with the client is occurring is to feed and waitForCompletion from the
+ same thread of control.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>clientId</code> - </dd>

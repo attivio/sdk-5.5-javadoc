@@ -192,7 +192,7 @@ var activeTableTab = "activeTableTab";
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>D</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/attivio/sdk/client/dictionary/SpellDictionaryApi.html#getDictionary-java.lang.String-">getDictionary</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;dictionaryName)</code>
-<div class="block">Get the <code>metadata</code> for a dictionary identified by <code>dictionaryName</code>.</div>
+<div class="block">Get the metadata for a dictionary identified by <code>dictionaryName</code>.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -286,9 +286,10 @@ var activeTableTab = "activeTableTab";
 <h4>getDictionary</h4>
 <pre>D&nbsp;getDictionary(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;dictionaryName)
          throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
-<div class="block">Get the <code>metadata</code> for a dictionary identified by <code>dictionaryName</code>.
+<div class="block">Get the metadata for a dictionary identified by <code>dictionaryName</code>.
 
- <p>Returns <code>null</code> if this dictionary does not exist.</p></div>
+ <p>
+ Returns <code>null</code> if this dictionary does not exist.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
@@ -307,10 +308,12 @@ var activeTableTab = "activeTableTab";
                      throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Get all dictionaries.
 
- <p>Dictionaries will be returned sorted according to <code>name</code>.</p>
+ <p>
+ Dictionaries will be returned sorted according to <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--">name</a>.
 
- <p>If <code>query</code> is specified, this value will be used to match dictionaries by performing a prefix match 
-    against the dictionary's <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--"><code>name</code></a>.</p></div>
+ <p>
+ If <code>query</code> is specified, this value will be used to match dictionaries by performing a prefix match against the
+ dictionary's <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--">name</a>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
@@ -329,7 +332,9 @@ var activeTableTab = "activeTableTab";
                throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Create a dictionary.
 
- <p>If a dictionary with the same <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--"><code>name</code></a> already exists, an exception will be thrown.</p></div>
+ <p>
+ If a dictionary with the same <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--">name</a> already exists, an exception will be thrown.
+ </p></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
@@ -348,7 +353,9 @@ var activeTableTab = "activeTableTab";
                throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Update metadata for a dictionary.
 
- <p>If a dictionary with this <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--"><code>name</code></a> does not already exist, an exception will be thrown.</p></div>
+ <p>
+ If a dictionary with this <a href="../../../../../com/attivio/sdk/client/dictionary/DictionaryInfo.html#getName--">name</a> does not already exist, an exception will be thrown.
+ </p></div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
@@ -456,9 +463,11 @@ var activeTableTab = "activeTableTab";
          throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Update the metadata for a term for <code>dictionaryName</code>.
 
- <p>NOTE: This method does not support modifying the <a href="../../../../../com/attivio/sdk/client/dictionary/TermDefinition.html#getTerm--"><code>TermDefinition.getTerm()</code></a> or <code>TermDefiniton#getLocale()</code> as these 
-    values define the unique key for the term. In order to change these properties, you must first call <code>#createTerm(String, E)</code> with the new value, 
-    and then upon success, call <code>#deleteTerm(String, E)</code> to delete the previous value.</p></div>
+ <p>
+ NOTE: This method does not support modifying the <a href="../../../../../com/attivio/sdk/client/dictionary/TermDefinition.html#getTerm--"><code>TermDefinition.getTerm()</code></a> or <a href="../../../../../com/attivio/sdk/client/dictionary/TermDefinition.html#getLocale--"><code>TermDefinition.getLocale()</code></a> as
+ these values define the unique key for the term. In order to change these properties, you must first call
+ <a href="../../../../../com/attivio/sdk/client/dictionary/SpellDictionaryApi.html#createTerm-java.lang.String-E-"><code>createTerm(String, TermDefinition)</code></a> with the new value, and then upon success, call
+ <a href="../../../../../com/attivio/sdk/client/dictionary/SpellDictionaryApi.html#deleteTerm-java.lang.String-E-"><code>deleteTerm(String, TermDefinition)</code></a> to delete the previous value.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
@@ -476,8 +485,10 @@ var activeTableTab = "activeTableTab";
           throws <a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></pre>
 <div class="block">Update the metadata for all <code>terms</code> for <code>dictionaryName</code>.
 
- <p>If any term does not yet exist, it will be created, as if by <code>#createTerm(String, E)</code>.</p>
- <p>If the term already exists, it will be updated, as if by <code>#updateTerm(String, E)</code>.</p></div>
+ <p>
+ If any term does not yet exist, it will be created, as if by <a href="../../../../../com/attivio/sdk/client/dictionary/SpellDictionaryApi.html#createTerm-java.lang.String-E-"><code>createTerm(String, TermDefinition)</code></a>.
+ <p>
+ If the term already exists, it will be updated, as if by <a href="../../../../../com/attivio/sdk/client/dictionary/SpellDictionaryApi.html#updateTerm-java.lang.String-E-"><code>updateTerm(String, TermDefinition)</code></a>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>

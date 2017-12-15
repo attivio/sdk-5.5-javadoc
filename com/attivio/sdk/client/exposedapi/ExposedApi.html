@@ -101,11 +101,10 @@
 <pre>public interface <span class="typeNameLabel">ExposedApi</span></pre>
 <div class="block">Marker interface for all externally exposed/supported APIs.
 
- All methods and properties exposed in these interfaces are required to be thread safe.
- All components marked with this interface will be automatically exposed via JMX and be available via
- the <code>ServiceFactory</code> apis. As such, all classes should be decorated with annotations to expose
- the services accordingly. Additionally, any non base data types returned should be annotated to support
- JAXB serialization.</div>
+ All methods and properties exposed in these interfaces are required to be thread safe. All components marked with this
+ interface will be automatically exposed via JMX and be available via the <code>com.attivio.sdk.service.ServiceFactory</code> apis.
+ As such, all classes should be decorated with annotations to expose the services accordingly. Additionally, any non base data
+ types returned should be annotated to support JAXB serialization.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../com/attivio/sdk/client/exposedapi/jmx/package-summary.html"><code>com.attivio.sdk.client.exposedapi.jmx</code></a></dd>

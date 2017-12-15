@@ -163,22 +163,23 @@ var activeTableTab = "activeTableTab";
                <a href="../../../../../com/attivio/sdk/server/udf/ArgumentInfo.html" title="interface in com.attivio.sdk.server.udf">ArgumentInfo</a>[]&nbsp;args)</pre>
 <div class="block">Field initialization.
 
- <p>This should include:
-   <ul>
-     <li>Parameters on <code>input</code> should be validated and stored.</li>
-     <li><code>args</code> should be type checked and validated.</li>
-     <li>Output type for <code>input</code> should be validated.</li>
-     <li>Any internal structures should be initialized.</li>
-   </ul>
+ <p>
+ This should include:
+ <ul>
+ <li>Parameters on <code>input</code> should be validated and stored.</li>
+ <li><code>args</code> should be type checked and validated.</li>
+ <li>Output type for <code>input</code> should be validated.</li>
+ <li>Any internal structures should be initialized.</li>
+ </ul>
  </p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>context</code> - QueryRequest level context information for initializing fields.</dd>
-<dd><code>input</code> - The input <code>UserDefinedExpression</code>.</dd>
+<dd><code>input</code> - The input <a href="../../../../../com/attivio/sdk/search/fields/UserDefinedField.html" title="class in com.attivio.sdk.search.fields"><code>UserDefinedField</code></a>.</dd>
 <dd><code>args</code> - Type information for supplied arguments.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if incorrect number of arguments are provided, 
-         data types for arguments are not supported, output type is invalid, or parameters are illegal.</dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if incorrect number of arguments are provided, data types for arguments are not supported,
+           output type is invalid, or parameters are illegal.</dd>
 </dl>
 </li>
 </ul>
@@ -192,7 +193,9 @@ var activeTableTab = "activeTableTab";
               <a href="../../../../../com/attivio/sdk/server/udf/InputValue.html" title="interface in com.attivio.sdk.server.udf">InputValue</a>[]&nbsp;args)</pre>
 <div class="block">Evaluate the result of the function and add it to <code>output</code>.
 
- <p><code>args</code> will map to <a href="../../../../../com/attivio/sdk/server/udf/ArgumentInfo.html" title="interface in com.attivio.sdk.server.udf"><code>ArgumentInfo</code></a>s provided in <code>#configure(UserDefinedField, ArgumentInfo[])</code>.</p></div>
+ <p>
+ <code>args</code> will map to <a href="../../../../../com/attivio/sdk/server/udf/ArgumentInfo.html" title="interface in com.attivio.sdk.server.udf"><code>ArgumentInfo</code></a>s provided in
+ <a href="../../../../../com/attivio/sdk/server/udf/UserDefinedFieldEvaluator.html#configure-com.attivio.sdk.server.udf.UserDefinedFieldContext-com.attivio.sdk.search.fields.UserDefinedField-com.attivio.sdk.server.udf.ArgumentInfo:A-"><code>configure(UserDefinedFieldContext, UserDefinedField, ArgumentInfo[])</code></a>.</div>
 </li>
 </ul>
 </li>

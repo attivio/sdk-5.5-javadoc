@@ -155,7 +155,7 @@ extends <a href="../../../../com/attivio/sdk/client/exposedapi/ExposedApi.html" 
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/attivio/sdk/client/RelevancyModelApi.html#addFeature-com.attivio.sdk.search.relevancy.RelevancyFeatureDef-">addFeature</a></span>(<a href="../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy">RelevancyFeatureDef</a>&nbsp;feature)</code>
-<div class="block">Add a <code>RelevanyFeatureDef</code>.</div>
+<div class="block">Add a <a href="../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy"><code>RelevancyFeatureDef</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -318,7 +318,8 @@ extends <a href="../../../../com/attivio/sdk/client/exposedapi/ExposedApi.html" 
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy">RelevancyFeatureDef</a>&gt;&nbsp;getFeatures()</pre>
 <div class="block">Get all features.
 
- <p>Order of returned features is undefind. Returned features should not be modified in any way.</p></div>
+ <p>
+ Order of returned features is undefined. Returned features should not be modified in any way.</div>
 </li>
 </ul>
 <a name="getFeature-java.lang.String-">
@@ -340,7 +341,7 @@ extends <a href="../../../../com/attivio/sdk/client/exposedapi/ExposedApi.html" 
 <li class="blockList">
 <h4>addFeature</h4>
 <pre>void&nbsp;addFeature(<a href="../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy">RelevancyFeatureDef</a>&nbsp;feature)</pre>
-<div class="block">Add a <code>RelevanyFeatureDef</code>.</div>
+<div class="block">Add a <a href="../../../../com/attivio/sdk/search/relevancy/RelevancyFeatureDef.html" title="class in com.attivio.sdk.search.relevancy"><code>RelevancyFeatureDef</code></a>.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if <code>feature</code> is <code>null</code>.</dd>
@@ -478,7 +479,8 @@ extends <a href="../../../../com/attivio/sdk/client/exposedapi/ExposedApi.html" 
                           long&nbsp;version)</pre>
 <div class="block">Delete a relevancy model.
 
- <p>Fails if relevancy model does not exist, if the relevancy model's source is <code>RelevancyModel#Source#STATIC</code> or if the model is active.</p></div>
+ <p>
+ Fails if relevancy model does not exist, if the relevancy model's source is <a href="../../../../com/attivio/sdk/search/relevancy/RelevancyModel.Source.html#STATIC"><code>RelevancyModel.Source.STATIC</code></a> or if the model is active.</div>
 </li>
 </ul>
 <a name="trainRelevancyModel-com.attivio.sdk.search.relevancy.RelevancyModel-">
@@ -490,10 +492,12 @@ extends <a href="../../../../com/attivio/sdk/client/exposedapi/ExposedApi.html" 
 <pre>long&nbsp;trainRelevancyModel(<a href="../../../../com/attivio/sdk/search/relevancy/RelevancyModel.html" title="class in com.attivio.sdk.search.relevancy">RelevancyModel</a>&nbsp;model)</pre>
 <div class="block">Train a relevancy model according to signal data as specified by <code>model</code>
 
- <p>Returns the version number for the newly created relevancy model.</p>
+ <p>
+ Returns the version number for the newly created relevancy model.
 
- <p>Relevancy model created will initially have a source of <code>RelevancyModel#Source#TRAINING</code>. Once
-    training of the relevancy model is complete, the source will be updated to be <code>RelevancyModel#Source#TRAINED</code>.</p></div>
+ <p>
+ Relevancy model created will initially have a source of <a href="../../../../com/attivio/sdk/search/relevancy/RelevancyModel.Source.html#TRAINING"><code>RelevancyModel.Source.TRAINING</code></a>. Once training of the relevancy model is
+ complete, the source will be updated to be <a href="../../../../com/attivio/sdk/search/relevancy/RelevancyModel.Source.html#TRAINED"><code>RelevancyModel.Source.TRAINED</code></a>.</div>
 </li>
 </ul>
 <a name="testRelevancyModel-com.attivio.sdk.search.relevancy.RelevancyModel-">
@@ -530,9 +534,12 @@ extends <a href="../../../../com/attivio/sdk/client/exposedapi/ExposedApi.html" 
                            long&nbsp;version)</pre>
 <div class="block">Publish a relevancy model.
 
- <p>Published relevancy models will be used for matching partial relevancy model names in <code>getRelevancyModel(String[])</code>.</p>
+ <p>
+ Published relevancy models will be used for matching partial relevancy model names in
+ <a href="../../../../com/attivio/sdk/client/RelevancyModelApi.html#getRelevancyModel-java.lang.String-long-"><code>getRelevancyModel(String, long)</code></a>.
 
- <p>Fails if relevancy model does not exist.</p></div>
+ <p>
+ Fails if relevancy model does not exist.</div>
 </li>
 </ul>
 <a name="getRelevancyModelPublishTime-java.lang.String-long-">
