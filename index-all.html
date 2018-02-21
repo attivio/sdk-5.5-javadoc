@@ -1184,11 +1184,11 @@
 </dd>
 <dt><a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util"><span class="typeNameLink">AieLogger</span></a> - Interface in <a href="com/attivio/sdk/server/util/package-summary.html">com.attivio.sdk.server.util</a></dt>
 <dd>
-<div class="block">Interface exposing the platform logging facilities within AIE.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </dd>
 <dt><a href="com/attivio/sdk/server/component/configuration/AieLoggerAware.html" title="interface in com.attivio.sdk.server.component.configuration"><span class="typeNameLink">AieLoggerAware</span></a> - Interface in <a href="com/attivio/sdk/server/component/configuration/package-summary.html">com.attivio.sdk.server.component.configuration</a></dt>
 <dd>
-<div class="block">Interfaces for classes that wish to be able to use the platform logging facilities via a <a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util"><code>AieLogger</code></a>.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/error/SailError.html#ALERT_NOT_CREATED">ALERT_NOT_CREATED</a></span> - Static variable in class com.attivio.sdk.error.<a href="com/attivio/sdk/error/SailError.html" title="class in com.attivio.sdk.error">SailError</a></dt>
 <dd>
@@ -4129,10 +4129,12 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#debug-java.lang.String-java.lang.Object...-">debug(String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a debug message.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#debug-java.lang.Throwable-java.lang.String-java.lang.Object...-">debug(Throwable, String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a debug message with an exception.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/util/StatusListener.html#debug-java.lang.String-java.lang.Object...-">debug(String, Object...)</a></span> - Method in interface com.attivio.util.<a href="com/attivio/util/StatusListener.html" title="interface in com.attivio.util">StatusListener</a></dt>
@@ -5745,10 +5747,12 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#error-com.attivio.sdk.error.ErrorCode-java.lang.String-java.lang.Object...-">error(ErrorCode, String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a error message with an error code.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#error-com.attivio.sdk.error.ErrorCode-java.lang.Throwable-java.lang.String-java.lang.Object...-">error(ErrorCode, Throwable, String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a severe message with an error code.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/util/StatusListener.html#error-com.attivio.sdk.error.ErrorCode-java.lang.Throwable-java.lang.String-java.lang.Object...-">error(ErrorCode, Throwable, String, Object...)</a></span> - Method in interface com.attivio.util.<a href="com/attivio/util/StatusListener.html" title="interface in com.attivio.util">StatusListener</a></dt>
@@ -7182,6 +7186,8 @@
 <dd>
 <div class="block">Get the resolution for rounding the center date.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/attivio/sdk/search/QueryRequest.html#getCenterTime--">getCenterTime()</a></span> - Method in class com.attivio.sdk.search.<a href="com/attivio/sdk/search/QueryRequest.html" title="class in com.attivio.sdk.search">QueryRequest</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/geo/AbstractEllipse.html#getCenterX--">getCenterX()</a></span> - Method in class com.attivio.sdk.geo.<a href="com/attivio/sdk/geo/AbstractEllipse.html" title="class in com.attivio.sdk.geo">AbstractEllipse</a></dt>
 <dd>
 <div class="block">Get the X coordinate for the center point.</div>
@@ -9907,7 +9913,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/component/routing/BaseRoutingComponent.html#getRoutingKey-T-">getRoutingKey(T)</a></span> - Method in interface com.attivio.sdk.server.component.routing.<a href="com/attivio/sdk/server/component/routing/BaseRoutingComponent.html" title="interface in com.attivio.sdk.server.component.routing">BaseRoutingComponent</a></dt>
 <dd>
-<div class="block">Processes a single <a href="com/attivio/sdk/esb/PlatformMessage.html" title="interface in com.attivio.sdk.esb"><code>PlatformMessage</code></a> and return the new WorkflowQueue.</div>
+<div class="block">Process a message and return the key to use for routing to a workflow.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/search/QueryRequest.html#getRowFilter--">getRowFilter()</a></span> - Method in class com.attivio.sdk.search.<a href="com/attivio/sdk/search/QueryRequest.html" title="class in com.attivio.sdk.search">QueryRequest</a></dt>
 <dd>
@@ -11808,6 +11814,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#info-java.lang.String-java.lang.Object...-">info(String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs an info message.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/util/StatusListener.html#info-java.lang.String-java.lang.Object...-">info(String, Object...)</a></span> - Method in interface com.attivio.util.<a href="com/attivio/util/StatusListener.html" title="interface in com.attivio.util">StatusListener</a></dt>
@@ -12587,6 +12594,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#isDebugEnabled--">isDebugEnabled()</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Tells whether the DEBUG level is set</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/schema/Schema.html#isDefaultSearchField-java.lang.String-">isDefaultSearchField(String)</a></span> - Static method in class com.attivio.sdk.schema.<a href="com/attivio/sdk/schema/Schema.html" title="class in com.attivio.sdk.schema">Schema</a></dt>
@@ -12737,6 +12745,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#isInfoEnabled--">isInfoEnabled()</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Tells whether the INFO level is set</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/schema/SchemaField.html#isLowerCase--">isLowerCase()</a></span> - Method in class com.attivio.sdk.schema.<a href="com/attivio/sdk/schema/SchemaField.html" title="class in com.attivio.sdk.schema">SchemaField</a></dt>
@@ -12809,6 +12818,10 @@
 <dt><span class="memberNameLink"><a href="com/attivio/util/LocaleUtils.html#ISO_639_1_AZERBAIJANI">ISO_639_1_AZERBAIJANI</a></span> - Static variable in class com.attivio.util.<a href="com/attivio/util/LocaleUtils.html" title="class in com.attivio.util">LocaleUtils</a></dt>
 <dd>
 <div class="block">Azerbaijani (az)</div>
+</dd>
+<dt><span class="memberNameLink"><a href="com/attivio/util/LocaleUtils.html#ISO_639_1_BENGALI">ISO_639_1_BENGALI</a></span> - Static variable in class com.attivio.util.<a href="com/attivio/util/LocaleUtils.html" title="class in com.attivio.util">LocaleUtils</a></dt>
+<dd>
+<div class="block">Bengali (bn)</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/util/LocaleUtils.html#ISO_639_1_BOSNIAN">ISO_639_1_BOSNIAN</a></span> - Static variable in class com.attivio.util.<a href="com/attivio/util/LocaleUtils.html" title="class in com.attivio.util">LocaleUtils</a></dt>
 <dd>
@@ -13192,6 +13205,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#isTraceEnabled--">isTraceEnabled()</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Tells whether the TRACE level is set</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/client/trigger/TriggerDictionaryInfo.html#isTriggerNameScopes--">isTriggerNameScopes()</a></span> - Method in class com.attivio.sdk.client.trigger.<a href="com/attivio/sdk/client/trigger/TriggerDictionaryInfo.html" title="class in com.attivio.sdk.client.trigger">TriggerDictionaryInfo</a></dt>
@@ -17666,6 +17680,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/component/configuration/AieLoggerAware.html#setAieLogger-com.attivio.sdk.server.util.AieLogger-">setAieLogger(AieLogger)</a></span> - Method in interface com.attivio.sdk.server.component.configuration.<a href="com/attivio/sdk/server/component/configuration/AieLoggerAware.html" title="interface in com.attivio.sdk.server.component.configuration">AieLoggerAware</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">This method will be called by the AIE server to supply a <a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util"><code>AieLogger</code></a>
  that this component can store and use.</div>
 </dd>
@@ -17847,6 +17862,8 @@
 <dd>
 <div class="block">Set the resolution for rounding the center date.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="com/attivio/sdk/search/QueryRequest.html#setCenterTime-java.util.Date-">setCenterTime(Date)</a></span> - Method in class com.attivio.sdk.search.<a href="com/attivio/sdk/search/QueryRequest.html" title="class in com.attivio.sdk.search">QueryRequest</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/geo/AbstractEllipse.html#setCenterX-double-">setCenterX(double)</a></span> - Method in class com.attivio.sdk.geo.<a href="com/attivio/sdk/geo/AbstractEllipse.html" title="class in com.attivio.sdk.geo">AbstractEllipse</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/geo/AbstractEllipse.html#setCenterY-double-">setCenterY(double)</a></span> - Method in class com.attivio.sdk.geo.<a href="com/attivio/sdk/geo/AbstractEllipse.html" title="class in com.attivio.sdk.geo">AbstractEllipse</a></dt>
@@ -22371,6 +22388,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#trace-java.lang.String-java.lang.Object...-">trace(String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a trace message.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/error/RelevancyError.html#TRAINING_FAILED">TRAINING_FAILED</a></span> - Static variable in class com.attivio.sdk.error.<a href="com/attivio/sdk/error/RelevancyError.html" title="class in com.attivio.sdk.error">RelevancyError</a></dt>
@@ -23506,10 +23524,12 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#warn-com.attivio.sdk.error.ErrorCode-java.lang.Throwable-java.lang.String-java.lang.Object...-">warn(ErrorCode, Throwable, String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a warning message without an error code.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/sdk/server/util/AieLogger.html#warn-com.attivio.sdk.error.ErrorCode-java.lang.String-java.lang.Object...-">warn(ErrorCode, String, Object...)</a></span> - Method in interface com.attivio.sdk.server.util.<a href="com/attivio/sdk/server/util/AieLogger.html" title="interface in com.attivio.sdk.server.util">AieLogger</a></dt>
 <dd>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 <div class="block">Logs a warning message with an error code.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/attivio/util/StatusListener.html#warn-com.attivio.sdk.error.ErrorCode-java.lang.Throwable-java.lang.String-java.lang.Object...-">warn(ErrorCode, Throwable, String, Object...)</a></span> - Method in interface com.attivio.util.<a href="com/attivio/util/StatusListener.html" title="interface in com.attivio.util">StatusListener</a></dt>
@@ -23825,6 +23845,6 @@ the order they are declared.</div>
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><i>Copyright &copy; 2017 Attivio, Inc. All Rights Reserved.</i><br/><br/><b>PATENT NOTICE</b>: Attivio, Inc. Software Related Patents. With respect to the Attivio software product(s) being used, the following patents apply: <i>Querying Joined Data Within A Search Engine Index</i>: United States Patent No.(s): 8,073,840. <i>Ordered Processing of Groups of Messages</i>: U.S. Patent No.(s) 8,495,656. <i>Signal processing approach to sentiment analysis for entities in documents</i>: U.S. Patent No.(s) 8,725,494. Other U.S. and International Patents Pending.</small></p>
+<p class="legalCopy"><small><i>Copyright &copy; 2018 Attivio, Inc. All Rights Reserved.</i><br/><br/><b>PATENT NOTICE</b>: Attivio, Inc. Software Related Patents. With respect to the Attivio software product(s) being used, the following patents apply: <i>Querying Joined Data Within A Search Engine Index</i>: United States Patent No.(s): 8,073,840. <i>Ordered Processing of Groups of Messages</i>: U.S. Patent No.(s) 8,495,656. <i>Signal processing approach to sentiment analysis for entities in documents</i>: U.S. Patent No.(s) 8,725,494. Other U.S. and International Patents Pending.</small></p>
 </body>
 </html>

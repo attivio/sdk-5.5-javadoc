@@ -112,9 +112,8 @@ var activeTableTab = "activeTableTab";
 extends <a href="../../../../../../com/attivio/sdk/server/component/Stage.html" title="interface in com.attivio.sdk.server.component">Stage</a></pre>
 <div class="block">Indicates that the implementor returns values to populate a <a href="../../../../../../com/attivio/sdk/esb/WorkflowQueue.html" title="class in com.attivio.sdk.esb"><code>WorkflowQueue</code></a>.
 
- <p>
- Classes implementing this interface expose themselves to topology based features that require special processing for endpoint
- values.</div>
+ <p>Classes implementing this interface expose themselves to topology based features that require special processing for endpoint
+    values.</p></div>
 </li>
 </ul>
 </div>
@@ -136,7 +135,7 @@ extends <a href="../../../../../../com/attivio/sdk/server/component/Stage.html" 
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../com/attivio/sdk/server/component/routing/BaseRoutingComponent.html#getRoutingKey-T-">getRoutingKey</a></span>(<a href="../../../../../../com/attivio/sdk/server/component/routing/BaseRoutingComponent.html" title="type parameter in BaseRoutingComponent">T</a>&nbsp;t)</code>
-<div class="block">Processes a single <a href="../../../../../../com/attivio/sdk/esb/PlatformMessage.html" title="interface in com.attivio.sdk.esb"><code>PlatformMessage</code></a> and return the new WorkflowQueue.</div>
+<div class="block">Process a message and return the key to use for routing to a workflow.</div>
 </td>
 </tr>
 </table>
@@ -163,13 +162,10 @@ extends <a href="../../../../../../com/attivio/sdk/server/component/Stage.html" 
 <li class="blockList">
 <h4>getRoutingKey</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getRoutingKey(<a href="../../../../../../com/attivio/sdk/server/component/routing/BaseRoutingComponent.html" title="type parameter in BaseRoutingComponent">T</a>&nbsp;t)</pre>
-<div class="block">Processes a single <a href="../../../../../../com/attivio/sdk/esb/PlatformMessage.html" title="interface in com.attivio.sdk.esb"><code>PlatformMessage</code></a> and return the new WorkflowQueue.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The workflowQueue for the message, null to drop the message</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../../../com/attivio/sdk/AttivioException.html" title="class in com.attivio.sdk">AttivioException</a></code></dd>
-</dl>
+<div class="block">Process a message and return the key to use for routing to a workflow.
+
+ <p>This routing key will reference a workflow configured in the "routingMap" configured for the component.
+    If this key is not specified in the "routingMap", the workflow specified in the "routingMapElse" property will be used instead.</p></div>
 </li>
 </ul>
 </li>
@@ -241,6 +237,6 @@ extends <a href="../../../../../../com/attivio/sdk/server/component/Stage.html" 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><i>Copyright &copy; 2017 Attivio, Inc. All Rights Reserved.</i><br/><br/><b>PATENT NOTICE</b>: Attivio, Inc. Software Related Patents. With respect to the Attivio software product(s) being used, the following patents apply: <i>Querying Joined Data Within A Search Engine Index</i>: United States Patent No.(s): 8,073,840. <i>Ordered Processing of Groups of Messages</i>: U.S. Patent No.(s) 8,495,656. <i>Signal processing approach to sentiment analysis for entities in documents</i>: U.S. Patent No.(s) 8,725,494. Other U.S. and International Patents Pending.</small></p>
+<p class="legalCopy"><small><i>Copyright &copy; 2018 Attivio, Inc. All Rights Reserved.</i><br/><br/><b>PATENT NOTICE</b>: Attivio, Inc. Software Related Patents. With respect to the Attivio software product(s) being used, the following patents apply: <i>Querying Joined Data Within A Search Engine Index</i>: United States Patent No.(s): 8,073,840. <i>Ordered Processing of Groups of Messages</i>: U.S. Patent No.(s) 8,495,656. <i>Signal processing approach to sentiment analysis for entities in documents</i>: U.S. Patent No.(s) 8,725,494. Other U.S. and International Patents Pending.</small></p>
 </body>
 </html>
