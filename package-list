@@ -1,4 +1,11 @@
+com.attivio.autocomplete
+com.attivio.client
+com.attivio.commandline
+com.attivio.platform.store
+com.attivio.platform.store.audit
+com.attivio.platform.transformer.ingest.util
 com.attivio.sdk
+com.attivio.sdk.autocomplete
 com.attivio.sdk.businesscenter
 com.attivio.sdk.client
 com.attivio.sdk.client.audit
@@ -7,6 +14,7 @@ com.attivio.sdk.client.exposedapi
 com.attivio.sdk.client.exposedapi.jmx
 com.attivio.sdk.client.streaming
 com.attivio.sdk.client.trigger
+com.attivio.sdk.commandline
 com.attivio.sdk.dictionary
 com.attivio.sdk.error
 com.attivio.sdk.esb
@@ -36,10 +44,14 @@ com.attivio.sdk.server.global
 com.attivio.sdk.server.tokenization
 com.attivio.sdk.server.udf
 com.attivio.sdk.server.util
+com.attivio.sdk.service
+com.attivio.sdk.test
 com.attivio.sdk.token
 com.attivio.sdk.util
+com.attivio.service
 com.attivio.util
 com.attivio.util.parser
 com.attivio.util.query
 com.attivio.util.serialization
 com.attivio.util.serialization.jaxb
+com.sample.module
