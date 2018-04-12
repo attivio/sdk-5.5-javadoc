@@ -5,6 +5,7 @@ com.attivio.platform.store
 com.attivio.platform.store.audit
 com.attivio.platform.transformer.ingest.util
 com.attivio.sdk
+com.attivio.sdk.api
 com.attivio.sdk.autocomplete
 com.attivio.sdk.businesscenter
 com.attivio.sdk.client
